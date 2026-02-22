@@ -1,198 +1,149 @@
 {
   "kind": "build_request",
-  "title": "Redesign UI/UX with clean minimal design and remove false face detection warnings",
+  "title": "Enhance visual design and branding with professional logo and refined UI theming",
+  "projectName": "FocusGuard",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-37",
-      "text": "Redesign the overall UI layout with a minimal, modern design approach using better spacing, consistent typography, soft colors, and a structured grid system. Apply card-based sections with rounded corners and subtle shadows throughout all components to create a professional, distraction-free look.",
+      "id": "REQ-46",
+      "text": "Create a clean, modern logo for FocusGuard that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable. Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol). The logo must work well in both light and dark modes.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "Redesign and improve the overall UI/UX of the FocusGuard website to make it clean, modern, and distraction-free. Follow a minimal design approach with better spacing, consistent typography, soft colors, and a structured layout. Use a simple grid system, card-based sections, rounded corners, and subtle shadows to create a professional look."
+          "Add a clean and modern logo that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable.",
+          "Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol)."
         ]
       },
       "acceptanceCriteria": [
-        "All components use consistent spacing scale and typography",
-        "Card-based sections have rounded corners and subtle shadows",
-        "Grid layout system applied for structured content arrangement",
-        "Soft color palette used throughout the interface",
-        "Visual clutter reduced with cleaner component designs"
+        "Logo is visible in the top-left corner of the Header component",
+        "Logo design is simple, minimal, and professional",
+        "Logo includes an icon representing protection/focus (shield, target, or focus symbol)",
+        "Logo renders correctly in both light and dark theme modes",
+        "Logo uses a professional, readable font for the FocusGuard text"
       ]
     },
     {
-      "id": "REQ-38",
-      "text": "Reduce visual clutter across all components by removing unnecessary text, alerts, and always-visible elements. Simplify the interface to create a calm, focused environment suitable for studying.",
+      "id": "REQ-47",
+      "text": "Place the FocusGuard logo in the top-left corner of the Header component, ensuring it is prominently displayed and properly aligned with other header elements.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "Reduce visual clutter by removing unnecessary text, alerts, and always-visible elements. Keep the interface calm and focused to match a study environment."
+          "Place it in the top-left corner of the header and ensure it looks good in both light and dark modes."
         ]
       },
       "acceptanceCriteria": [
-        "Unnecessary text and redundant labels removed",
-        "Non-essential alerts and warnings minimized",
-        "Interface maintains calm, minimal aesthetic",
-        "Only essential information displayed during study sessions"
+        "Logo appears in the top-left corner of the Header component",
+        "Logo is properly sized and does not overlap navigation elements",
+        "Logo alignment and spacing are consistent with the minimal design aesthetic"
       ]
     },
     {
-      "id": "REQ-39",
-      "text": "Create a strong hero section on the homepage with a prominent headline, the FocusGuard tagline, and a clear 'Start Focus Session' call-to-action button that navigates to the timer page.",
+      "id": "REQ-48",
+      "text": "Improve the Dashboard component appearance by adding soft shades, depth, and enhanced visual hierarchy. Use subtle background contrasts, refined card-based sections with rounded corners, and light shadows to make the dashboard feel modern and less flat.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "Improve the homepage with: A strong hero section with headline, tagline, and 'Start Focus Session' button"
+          "Improve the dashboard appearance by adding soft shades, depth, and visual hierarchy. Use subtle background contrasts, card-based sections, rounded corners, and light shadows to make the dashboard feel modern and less flat."
         ]
       },
       "acceptanceCriteria": [
-        "Hero section prominently displays FocusGuard headline",
-        "Tagline 'Stay Present. Stay Disciplined. Stay Ahead.' visible in hero",
-        "'Start Focus Session' button clearly visible and functional",
-        "Hero section creates strong visual impact as landing point"
+        "Dashboard cards use soft shadows for depth perception",
+        "Card backgrounds have subtle contrast against the page background",
+        "Visual hierarchy clearly emphasizes key statistics and metrics",
+        "Dashboard feels modern and three-dimensional rather than flat",
+        "Design maintains the calm, productivity-focused aesthetic"
       ]
     },
     {
-      "id": "REQ-40",
-      "text": "Add clear feature cards to the homepage showcasing the four main features: Camera Monitoring, Focus Music, App Blocking, and Study Stats. Each card should have an icon, title, and brief description in a clean card-based layout.",
+      "id": "REQ-49",
+      "text": "Refine light mode theming across all components with soft gray or tinted backgrounds and gentle shadows for visual separation. Ensure the color palette reduces eye strain and maintains readability.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "Clear feature cards (Camera Monitoring, Focus Music, App Blocking, Study Stats)"
+          "Light mode: soft gray or tinted backgrounds with gentle shadows for separation",
+          "Ensure readability and reduce eye strain"
         ]
       },
       "acceptanceCriteria": [
-        "Four feature cards displayed in grid layout",
-        "Each card shows Camera Monitoring, Focus Music, App Blocking, or Study Stats",
-        "Cards include icons, titles, and concise descriptions",
-        "Cards use consistent styling with rounded corners and shadows"
+        "Light mode uses soft gray or subtly tinted backgrounds",
+        "Shadows in light mode are gentle and provide clear visual separation",
+        "Text contrast meets accessibility standards for readability",
+        "Color palette is designed to reduce eye strain during extended use",
+        "Background and foreground colors are balanced and comfortable to view"
       ]
     },
     {
-      "id": "REQ-41",
-      "text": "Improve the Dashboard component to be cleaner and easier to read with better visual hierarchy, improved spacing, and organized sections that emphasize key statistics without overwhelming the user.",
+      "id": "REQ-50",
+      "text": "Refine dark mode theming across all components with deep dark backgrounds and slightly lighter cards for smooth contrast. Ensure readability is maintained and eye strain is reduced in dark mode.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "A clean and easy-to-read dashboard"
+          "Dark mode: deep dark backgrounds with slightly lighter cards and smooth contrast",
+          "Ensure readability and reduce eye strain"
         ]
       },
       "acceptanceCriteria": [
-        "Dashboard layout improved with better spacing",
-        "Key statistics emphasized through visual hierarchy",
-        "Information organized in logical, scannable sections",
-        "Dashboard maintains minimal, uncluttered appearance"
+        "Dark mode uses deep dark backgrounds (not pure black)",
+        "Card elements are slightly lighter than the background for smooth contrast",
+        "Text contrast is sufficient for comfortable reading in dark mode",
+        "Shadows and depth cues work effectively in dark mode",
+        "Dark mode color palette reduces eye strain during nighttime use"
       ]
     },
     {
-      "id": "REQ-42",
-      "text": "Implement comprehensive dark mode support across the entire application with proper color theming that maintains readability and the calm study environment aesthetic.",
+      "id": "REQ-51",
+      "text": "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both light and dark modes. The final design should feel calm, premium, and productivity-focused.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-6"
         ],
         "quotes": [
-          "Dark mode support"
+          "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both modes.",
+          "The final design should feel calm, premium, and productivity-focused."
         ]
       },
       "acceptanceCriteria": [
-        "Dark mode toggle available and functional",
-        "All components properly themed for dark mode",
-        "Dark mode color scheme maintains high readability",
-        "Theme preference persisted across sessions"
-      ]
-    },
-    {
-      "id": "REQ-43",
-      "text": "Add smooth, subtle animations throughout the application for transitions, state changes, and interactions. Animations should be minimal and enhance the user experience without being distracting.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "Smooth, subtle animations only"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Smooth transitions added for component state changes",
-        "Hover and click interactions include subtle animations",
-        "Animations are gentle and non-distracting",
-        "Animation duration and easing appropriate for study context"
-      ]
-    },
-    {
-      "id": "REQ-44",
-      "text": "Remove the 'Looking at the screen' warning message completely from the camera monitoring system in the useFaceDetection hook and related components. Do not display this alert anymore. Only detect whether the user is present or absent using face detection without showing gaze-related warnings.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "Update the camera monitoring system by removing the 'Looking at the screen' warning or message completely. Do not show this alert anymore, as it causes false detections and distracts users. Instead, only detect whether the user is present or absent using reliable face detection, without unnecessary warnings."
-        ]
-      },
-      "acceptanceCriteria": [
-        "'Looking at the screen' warning no longer displayed",
-        "Gaze direction alerts removed from UI",
-        "Camera monitoring focuses only on face presence detection",
-        "No distracting warnings for minor head movements or looking away"
-      ]
-    },
-    {
-      "id": "REQ-45",
-      "text": "Ensure the redesigned interface is fully responsive and maintains the clean, minimal aesthetic on both desktop and mobile screen sizes with appropriate breakpoints and layout adjustments.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "Prioritize simplicity, readability, and a distraction-free experience across both desktop and mobile."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Layout adapts properly to mobile screen sizes",
-        "Desktop layout uses available space effectively",
-        "Typography scales appropriately across breakpoints",
-        "Touch targets sized appropriately for mobile interaction",
-        "Minimal design maintained across all screen sizes"
+        "Spacing between components is balanced and consistent",
+        "Color scheme is consistent across both light and dark modes",
+        "Layout remains clean and uncluttered",
+        "Overall aesthetic feels premium and productivity-focused",
+        "Design maintains a calm atmosphere suitable for focused study work"
       ]
     }
   ],
   "constraints": [
-    "Do not modify Internet Identity integration in useInternetIdentity hook",
-    "Preserve existing camera detection functionality in useFaceDetection, useObjectDetection, and usePoseDetection hooks",
-    "Do not change backend session recording logic in main.mo",
-    "Maintain existing timer functionality in useTimer hook",
-    "Keep music player audio management logic intact"
+    "Do not modify the immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Maintain the existing React + Tailwind + Shadcn stack",
+    "Preserve all existing functionality while enhancing visual design",
+    "Ensure logo works properly in both light and dark themes without requiring separate logo files"
   ],
   "nonGoals": [
-    "Adding new timer modes beyond Pomodoro and custom",
-    "Changing camera detection algorithms or thresholds",
-    "Modifying backend data structures or API",
-    "Adding new features beyond UI/UX improvements",
-    "Changing existing authentication flow"
+    "Changing the application functionality or features",
+    "Modifying backend code or data structures",
+    "Adding new pages or navigation structure",
+    "Implementing animations beyond what already exists",
+    "Creating a full rebrand beyond the logo and visual refinements"
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Professional FocusGuard logo with shield/target/focus icon symbol and clean typography, suitable for both light and dark backgrounds (focusguard-logo.dim_200x60.png)"
+    ],
     "edits": []
   }
 }

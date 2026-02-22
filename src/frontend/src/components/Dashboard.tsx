@@ -53,8 +53,8 @@ export default function Dashboard() {
       </div>
 
       {/* Key Metrics Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300 animate-slide-up">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Total Study Time</CardTitle>
             <Clock className="h-5 w-5 text-primary" />
@@ -65,7 +65,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="border-accent/20 bg-gradient-to-br from-accent/5 to-transparent rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300 animate-slide-up" style={{ animationDelay: '50ms' }}>
+        <Card className="border-accent/20 bg-gradient-to-br from-accent/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: '50ms' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Focused Time</CardTitle>
             <Brain className="h-5 w-5 text-accent" />
@@ -76,7 +76,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="border-secondary/20 bg-gradient-to-br from-secondary/5 to-transparent rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300 animate-slide-up" style={{ animationDelay: '100ms' }}>
+        <Card className="border-secondary/20 bg-gradient-to-br from-secondary/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: '100ms' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Focus Score</CardTitle>
             <TrendingUp className="h-5 w-5 text-secondary" />
@@ -87,7 +87,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-transparent rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300 animate-slide-up" style={{ animationDelay: '150ms' }}>
+        <Card className="border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: '150ms' }}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Daily Streak</CardTitle>
             <Flame className="h-5 w-5 text-orange-500" />
@@ -103,8 +103,8 @@ export default function Dashboard() {
       </div>
 
       {/* Secondary Metrics */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Card className="rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <Card className="rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 bg-card">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Today's Progress</CardTitle>
             <Target className="h-4 w-4 text-muted-foreground" />
@@ -118,7 +118,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300">
+        <Card className="rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 bg-card">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Break Time</CardTitle>
             <Coffee className="h-4 w-4 text-muted-foreground" />
@@ -129,166 +129,139 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-300">
+        <Card className="rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 bg-card">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Distractions</CardTitle>
             <AlertTriangle className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{totalDistractionCount}</div>
-            {totalDistractionTime > 0 && (
-              <p className="text-xs text-warning mt-2">{formatTime(totalDistractionTime)} away</p>
-            )}
+            <p className="text-xs text-muted-foreground mt-2">{formatTime(totalDistractionTime)} lost</p>
           </CardContent>
         </Card>
       </div>
 
-      {/* Performance Insights */}
-      {insights.length > 0 && (
-        <Card className="border-accent/30 rounded-xl shadow-soft-lg">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Award className="h-5 w-5 text-accent" />
-              Performance Insights
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {insights.map((insight, index) => (
-                <div
-                  key={index}
-                  className="flex gap-3 p-4 rounded-xl border bg-card/50 hover:bg-card transition-all duration-200 hover:shadow-soft"
-                >
-                  <div className="text-2xl flex-shrink-0">{insight.icon}</div>
-                  <div className="space-y-1">
-                    <h4 className="font-semibold text-sm">{insight.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{insight.message}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Goal Setting */}
-      <GoalSetting />
-
-      {/* Progress Charts */}
+      {/* Charts and Insights */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="rounded-xl shadow-soft-lg">
-          <CardHeader>
-            <CardTitle className="flex items-center justify-between flex-wrap gap-2">
-              <span className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                Daily Progress
-              </span>
-              {weeklyTrend !== 0 && (
-                <span className={`text-sm flex items-center gap-1 ${weeklyTrend > 0 ? 'text-success' : 'text-warning'}`}>
-                  {weeklyTrend > 0 ? <TrendingUp className="h-4 w-4" /> : <TrendingDown className="h-4 w-4" />}
-                  {Math.abs(weeklyTrend)}% vs last week
-                </span>
-              )}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={dailyStats}>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis 
-                  dataKey="day" 
-                  className="text-xs"
-                  tick={{ fill: 'hsl(var(--muted-foreground))' }}
-                />
-                <YAxis 
-                  className="text-xs"
-                  tick={{ fill: 'hsl(var(--muted-foreground))' }}
-                />
-                <Tooltip 
-                  contentStyle={{ 
-                    backgroundColor: 'hsl(var(--card))',
-                    border: '1px solid hsl(var(--border))',
-                    borderRadius: '12px',
-                  }}
-                  labelStyle={{ color: 'hsl(var(--foreground))' }}
-                  formatter={(value: number) => [`${value.toFixed(2)} hours`, 'Study Time']}
-                />
-                <Bar 
-                  dataKey="hours" 
-                  fill="hsl(var(--primary))" 
-                  radius={[8, 8, 0, 0]}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-            <p className="text-xs text-muted-foreground text-center mt-3">
-              {studyDaysThisWeek} of 7 days this week
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="rounded-xl shadow-soft-lg">
+        <Card className="rounded-xl shadow-soft-lg bg-card">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5" />
-              Weekly Trend
+              <Calendar className="h-5 w-5" />
+              Weekly Overview
             </CardTitle>
           </CardHeader>
           <CardContent>
             <StudyGraph data={weeklyStats} />
           </CardContent>
         </Card>
+
+        <Card className="rounded-xl shadow-soft-lg bg-card">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Target className="h-5 w-5" />
+              Daily Goal
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <GoalSetting />
+          </CardContent>
+        </Card>
       </div>
 
-      {/* Session History */}
-      <Tabs defaultValue="history" className="space-y-4">
-        <TabsList className="rounded-lg">
-          <TabsTrigger value="history" className="rounded-lg">Recent Sessions</TabsTrigger>
-        </TabsList>
+      {/* Detailed Stats Tabs */}
+      <Card className="rounded-xl shadow-soft-lg bg-card">
+        <CardHeader>
+          <CardTitle>Detailed Statistics</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 rounded-lg">
+              <TabsTrigger value="overview" className="rounded-lg">Overview</TabsTrigger>
+              <TabsTrigger value="trends" className="rounded-lg">Trends</TabsTrigger>
+              <TabsTrigger value="insights" className="rounded-lg">Insights</TabsTrigger>
+            </TabsList>
 
-        <TabsContent value="history" className="space-y-4">
-          <Card className="rounded-xl shadow-soft-lg">
-            <CardHeader>
-              <CardTitle>Session History</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {sessions.length === 0 ? (
-                  <p className="text-center text-muted-foreground py-8">
-                    No sessions yet. Start studying to see your history!
-                  </p>
-                ) : (
-                  sessions.slice(0, 10).map((session, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center justify-between p-4 rounded-xl border bg-card/50 hover:bg-card transition-all duration-200 hover:shadow-soft"
-                    >
-                      <div>
-                        <p className="font-medium">
-                          {session.isPomodoro ? '🍅 Pomodoro' : '⏱️ Custom'} Session
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {new Date(Number(session.startTime) / 1000000).toLocaleDateString()} at{' '}
-                          {new Date(Number(session.startTime) / 1000000).toLocaleTimeString()}
-                        </p>
-                      </div>
-                      <div className="text-right space-y-1">
-                        <p className="font-medium">
-                          {Math.floor(Number(session.focusedDuration) / 60000000000)}m focused
-                        </p>
-                        {Number(session.distractionCount) > 0 && (
-                          <p className="text-xs text-warning">
-                            {Number(session.distractionCount)} distractions
-                          </p>
-                        )}
-                      </div>
+            <TabsContent value="overview" className="space-y-4 mt-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2 p-4 rounded-lg bg-muted/30">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Timer className="h-4 w-4" />
+                    <span>Total Sessions</span>
+                  </div>
+                  <p className="text-2xl font-bold">{sessions.length}</p>
+                </div>
+                <div className="space-y-2 p-4 rounded-lg bg-muted/30">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4" />
+                    <span>Study Days This Week</span>
+                  </div>
+                  <p className="text-2xl font-bold">{studyDaysThisWeek}</p>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="trends" className="space-y-4 mt-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-muted/30">
+                  <div className="flex items-center gap-3">
+                    {weeklyTrend >= 0 ? (
+                      <TrendingUp className="h-5 w-5 text-success" />
+                    ) : (
+                      <TrendingDown className="h-5 w-5 text-destructive" />
+                    )}
+                    <div>
+                      <p className="text-sm text-muted-foreground">Weekly Trend</p>
+                      <p className="text-lg font-semibold">
+                        {weeklyTrend >= 0 ? '+' : ''}{weeklyTrend.toFixed(1)}%
+                      </p>
                     </div>
-                  ))
+                  </div>
+                </div>
+
+                <div className="h-64">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={dailyStats}>
+                      <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                      <XAxis dataKey="day" className="text-xs" />
+                      <YAxis className="text-xs" />
+                      <Tooltip 
+                        contentStyle={{ 
+                          backgroundColor: 'oklch(var(--card))',
+                          border: '1px solid oklch(var(--border))',
+                          borderRadius: '0.5rem'
+                        }}
+                      />
+                      <Bar dataKey="hours" fill="oklch(var(--primary))" radius={[8, 8, 0, 0]} />
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="insights" className="space-y-4 mt-6">
+              <div className="space-y-3">
+                {insights.map((insight, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors"
+                  >
+                    <span className="text-2xl flex-shrink-0">{insight.icon}</span>
+                    <div className="flex-1 space-y-1">
+                      <p className="text-sm font-medium">{insight.title}</p>
+                      <p className="text-sm text-muted-foreground">{insight.message}</p>
+                    </div>
+                  </div>
+                ))}
+                {insights.length === 0 && (
+                  <p className="text-sm text-muted-foreground text-center py-8">
+                    Complete more study sessions to unlock personalized insights
+                  </p>
                 )}
               </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
     </div>
   );
 }

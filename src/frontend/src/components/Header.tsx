@@ -7,14 +7,17 @@ export default function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60 transition-all duration-200">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 transition-all duration-200 shadow-sm">
       <div className="container flex h-16 items-center justify-between">
         <button
           onClick={() => navigate({ to: '/' })}
-          className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-200"
+          className="flex items-center hover:opacity-80 transition-opacity duration-200"
         >
-          <img src="/assets/generated/icon-focus.dim_128x128.png" alt="FocusGuard" className="h-8 w-8" />
-          <h1 className="text-xl font-bold tracking-tight">FocusGuard</h1>
+          <img 
+            src="/assets/generated/focusguard-logo.dim_200x60.png" 
+            alt="FocusGuard" 
+            className="h-10 w-auto"
+          />
         </button>
         
         <nav className="flex items-center gap-1">

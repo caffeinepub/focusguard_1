@@ -26,7 +26,7 @@ export default function HomePage() {
               <Button
                 size="lg"
                 onClick={() => navigate({ to: '/timer' })}
-                className="gap-2 text-lg px-8 py-6 rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-200 hover:scale-105"
+                className="gap-2 text-lg px-8 py-6 rounded-xl shadow-soft-xl hover:shadow-soft-2xl transition-all duration-200 hover:scale-105"
               >
                 Start Focus Session
                 <ArrowRight className="h-5 w-5" />
@@ -35,7 +35,7 @@ export default function HomePage() {
                 size="lg"
                 variant="outline"
                 onClick={() => navigate({ to: '/dashboard' })}
-                className="gap-2 text-lg px-8 py-6 rounded-xl"
+                className="gap-2 text-lg px-8 py-6 rounded-xl shadow-soft hover:shadow-soft-lg transition-all duration-200"
               >
                 View Dashboard
               </Button>
@@ -54,7 +54,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-muted/20">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -111,7 +111,7 @@ export default function HomePage() {
             <Button
               size="lg"
               onClick={() => navigate({ to: '/timer' })}
-              className="gap-2 text-lg px-8 py-6 rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-200 hover:scale-105"
+              className="gap-2 text-lg px-8 py-6 rounded-xl shadow-soft-xl hover:shadow-soft-2xl transition-all duration-200 hover:scale-105"
             >
               Get Started Now
               <ArrowRight className="h-5 w-5" />

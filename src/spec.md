@@ -1,17 +1,13 @@
 # Specification
 
 ## Summary
-**Goal:** Redesign the FocusGuard interface with a clean, minimal UI/UX and remove false face detection warnings to create a distraction-free study environment.
+**Goal:** Enhance visual design and branding with a professional logo and refined UI theming for improved aesthetics and user experience.
 
 **Planned changes:**
-- Redesign overall UI with minimal design approach: better spacing, consistent typography, soft colors, grid system, card-based sections with rounded corners and subtle shadows
-- Reduce visual clutter by removing unnecessary text, alerts, and always-visible elements
-- Create strong hero section on homepage with headline, tagline, and 'Start Focus Session' CTA button
-- Add feature cards showcasing Camera Monitoring, Focus Music, App Blocking, and Study Stats
-- Improve Dashboard component with better visual hierarchy, spacing, and organized sections
-- Implement comprehensive dark mode support with proper color theming
-- Add smooth, subtle animations for transitions and interactions
-- Remove 'Looking at the screen' warning from camera monitoring system completely
-- Ensure fully responsive design maintaining minimal aesthetic on desktop and mobile
+- Add a clean, modern FocusGuard logo with shield/target/focus icon in the top-left corner of the Header
+- Improve Dashboard appearance with soft shadows, subtle background contrasts, and card-based sections with rounded corners
+- Refine light mode with soft gray/tinted backgrounds and gentle shadows for visual separation
+- Refine dark mode with deep dark backgrounds and slightly lighter cards for smooth contrast
+- Maintain clean, distraction-free layout with balanced spacing and consistent colors across both themes
 
-**User-visible outcome:** Users experience a modern, clean, and distraction-free interface with better organized content, dark mode option, and smooth interactions. The camera monitoring no longer shows false gaze warnings, only detecting presence/absence.
+**User-visible outcome:** Users will see a more polished, premium application with a professional logo and enhanced visual depth. The interface will feel modern and calming with improved visual hierarchy, better theme consistency, and reduced eye strain in both light and dark modes.

@@ -2,17 +2,69 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-redesign-the-overall-ui-layout-with-a-minimal-modern-design-approach-using-better-spacing-consistent-typography-soft-colors-and-a-structured-grid-system-apply-card-based-sections-with-rounded-corners-and-subtle-shadows-throughout-all-components-to-create-a-professional-distraction-free-look",
-      "featureTitle": "Redesign the overall UI layout with a minimal, modern design approach using better spacing, consistent typography, soft colors, and a structured grid system. Apply card-based sections with rounded corners and subtle shadows throughout all components to create a professional, distraction-free look.",
+      "featureId": "feature-create-a-clean-modern-logo-for-focusguard-that-represents-focus-discipline-and-productivity-the-logo-should-be-simple-minimal-and-easily-recognizable-use-a-professional-font-and-an-icon-that-matches-the-concept-of-protection-and-concentration-shield-target-or-focus-symbol-the-logo-must-work-well-in-both-light-and-dark-modes",
+      "featureTitle": "Create a clean, modern logo for FocusGuard that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable. Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol). The logo must work well in both light and dark modes.",
       "files": [
-        "frontend/src/components/CameraMonitor.tsx",
-        "frontend/src/components/Dashboard.tsx",
-        "frontend/src/components/Footer.tsx",
-        "frontend/src/components/GoalSetting.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/components/MotivationalQuote.tsx",
-        "frontend/src/components/StudyGraph.tsx",
-        "frontend/src/components/StudyTimer.tsx",
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-46"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-place-the-focusguard-logo-in-the-top-left-corner-of-the-header-component-ensuring-it-is-prominently-displayed-and-properly-aligned-with-other-header-elements",
+      "featureTitle": "Place the FocusGuard logo in the top-left corner of the Header component, ensuring it is prominently displayed and properly aligned with other header elements.",
+      "files": [
+        "frontend/src/components/Header.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-47"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-improve-the-dashboard-component-appearance-by-adding-soft-shades-depth-and-enhanced-visual-hierarchy-use-subtle-background-contrasts-refined-card-based-sections-with-rounded-corners-and-light-shadows-to-make-the-dashboard-feel-modern-and-less-flat",
+      "featureTitle": "Improve the Dashboard component appearance by adding soft shades, depth, and enhanced visual hierarchy. Use subtle background contrasts, refined card-based sections with rounded corners, and light shadows to make the dashboard feel modern and less flat.",
+      "files": [
+        "frontend/src/components/Dashboard.tsx"
+      ],
+      "components": [
+        "camera@1.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-48"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-refine-light-mode-theming-across-all-components-with-soft-gray-or-tinted-backgrounds-and-gentle-shadows-for-visual-separation-ensure-the-color-palette-reduces-eye-strain-and-maintains-readability",
+      "featureTitle": "Refine light mode theming across all components with soft gray or tinted backgrounds and gentle shadows for visual separation. Ensure the color palette reduces eye strain and maintains readability.",
+      "files": [
         "frontend/src/index.css",
         "frontend/tailwind.config.js"
       ],
@@ -26,19 +78,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-37"
+        "REQ-49"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-reduce-visual-clutter-across-all-components-by-removing-unnecessary-text-alerts-and-always-visible-elements-simplify-the-interface-to-create-a-calm-focused-environment-suitable-for-studying",
-      "featureTitle": "Reduce visual clutter across all components by removing unnecessary text, alerts, and always-visible elements. Simplify the interface to create a calm, focused environment suitable for studying.",
+      "featureId": "feature-refine-dark-mode-theming-across-all-components-with-deep-dark-backgrounds-and-slightly-lighter-cards-for-smooth-contrast-ensure-readability-is-maintained-and-eye-strain-is-reduced-in-dark-mode",
+      "featureTitle": "Refine dark mode theming across all components with deep dark backgrounds and slightly lighter cards for smooth contrast. Ensure readability is maintained and eye strain is reduced in dark mode.",
       "files": [
-        "frontend/src/components/CameraMonitor.tsx",
-        "frontend/src/components/Dashboard.tsx",
-        "frontend/src/components/DistractionWarning.tsx",
-        "frontend/src/components/MusicPlayer.tsx",
-        "frontend/src/components/StudyTimer.tsx"
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
       ],
       "components": [
         "camera@1.0.0",
@@ -50,133 +99,20 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-38"
+        "REQ-50"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-create-a-strong-hero-section-on-the-homepage-with-a-prominent-headline-the-focusguard-tagline-and-a-clear-start-focus-session-call-to-action-button-that-navigates-to-the-timer-page",
-      "featureTitle": "Create a strong hero section on the homepage with a prominent headline, the FocusGuard tagline, and a clear 'Start Focus Session' call-to-action button that navigates to the timer page.",
+      "featureId": "feature-maintain-a-clean-distraction-free-layout-with-balanced-spacing-and-consistent-colors-across-both-light-and-dark-modes-the-final-design-should-feel-calm-premium-and-productivity-focused",
+      "featureTitle": "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both light and dark modes. The final design should feel calm, premium, and productivity-focused.",
       "files": [
         "frontend/src/App.tsx",
+        "frontend/src/components/Footer.tsx",
         "frontend/src/components/Header.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-39"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-clear-feature-cards-to-the-homepage-showcasing-the-four-main-features-camera-monitoring-focus-music-app-blocking-and-study-stats-each-card-should-have-an-icon-title-and-brief-description-in-a-clean-card-based-layout",
-      "featureTitle": "Add clear feature cards to the homepage showcasing the four main features: Camera Monitoring, Focus Music, App Blocking, and Study Stats. Each card should have an icon, title, and brief description in a clean card-based layout.",
-      "files": [
-        "frontend/src/components/FeatureCard.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-40"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-improve-the-dashboard-component-to-be-cleaner-and-easier-to-read-with-better-visual-hierarchy-improved-spacing-and-organized-sections-that-emphasize-key-statistics-without-overwhelming-the-user",
-      "featureTitle": "Improve the Dashboard component to be cleaner and easier to read with better visual hierarchy, improved spacing, and organized sections that emphasize key statistics without overwhelming the user.",
-      "files": [
-        "frontend/src/components/Dashboard.tsx",
-        "frontend/src/components/StudyGraph.tsx"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-41"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-comprehensive-dark-mode-support-across-the-entire-application-with-proper-color-theming-that-maintains-readability-and-the-calm-study-environment-aesthetic",
-      "featureTitle": "Implement comprehensive dark mode support across the entire application with proper color theming that maintains readability and the calm study environment aesthetic.",
-      "files": [
-        "frontend/src/components/CameraMonitor.tsx",
-        "frontend/src/components/Dashboard.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/components/StudyTimer.tsx",
-        "frontend/src/components/ThemeToggle.tsx",
         "frontend/src/index.css",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-42"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-smooth-subtle-animations-throughout-the-application-for-transitions-state-changes-and-interactions-animations-should-be-minimal-and-enhance-the-user-experience-without-being-distracting",
-      "featureTitle": "Add smooth, subtle animations throughout the application for transitions, state changes, and interactions. Animations should be minimal and enhance the user experience without being distracting.",
-      "files": [
-        "frontend/src/components/Dashboard.tsx",
-        "frontend/src/components/DistractionWarning.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/components/StudyTimer.tsx",
-        "frontend/src/index.css",
+        "frontend/src/pages/DashboardPage.tsx",
         "frontend/src/pages/HomePage.tsx",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-43"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-remove-the-looking-at-the-screen-warning-message-completely-from-the-camera-monitoring-system-in-the-usefacedetection-hook-and-related-components-do-not-display-this-alert-anymore-only-detect-whether-the-user-is-present-or-absent-using-face-detection-without-showing-gaze-related-warnings",
-      "featureTitle": "Remove the 'Looking at the screen' warning message completely from the camera monitoring system in the useFaceDetection hook and related components. Do not display this alert anymore. Only detect whether the user is present or absent using face detection without showing gaze-related warnings.",
-      "files": [
-        "frontend/src/components/CameraMonitor.tsx",
-        "frontend/src/components/DistractionWarning.tsx",
-        "frontend/src/hooks/useFaceDetection.ts",
         "frontend/src/pages/TimerPage.tsx"
       ],
       "components": [
@@ -189,34 +125,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-44"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-ensure-the-redesigned-interface-is-fully-responsive-and-maintains-the-clean-minimal-aesthetic-on-both-desktop-and-mobile-screen-sizes-with-appropriate-breakpoints-and-layout-adjustments",
-      "featureTitle": "Ensure the redesigned interface is fully responsive and maintains the clean, minimal aesthetic on both desktop and mobile screen sizes with appropriate breakpoints and layout adjustments.",
-      "files": [
-        "frontend/src/components/CameraMonitor.tsx",
-        "frontend/src/components/Dashboard.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/components/MusicPlayer.tsx",
-        "frontend/src/components/StudyTimer.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-45"
+        "REQ-51"
       ],
       "confidence": "high"
     }

@@ -56,7 +56,7 @@ export default function TimerPage() {
   const showDistraction = isSessionActive && distractionType !== null;
 
   return (
-    <div className="relative min-h-[calc(100vh-8rem)]">
+    <div className="relative min-h-[calc(100vh-8rem)] bg-gradient-to-b from-background via-muted/10 to-background">
       <div className="container py-8">
         <div className="flex justify-end items-start mb-6">
           <MusicControlButton 

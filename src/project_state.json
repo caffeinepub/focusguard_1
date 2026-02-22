@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 11,
+  "projectStateVersion": 13,
   "summary": "FocusGuard: A cross-platform study productivity web app with smart timer, AI-powered camera monitoring for face/distraction detection, website blocking during study sessions, background monitoring, and analytics dashboard with streaks and focus scores",
   "architectural_notes": [
     "React/Next.js frontend with TypeScript",
@@ -26,6 +26,7 @@
     "App switching detection limited by browser API - may not detect all external app launches on mobile"
   ],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Professional FocusGuard logo with shield/target/focus icon symbol and clean typography, suitable for both light and dark backgrounds (focusguard-logo.dim_200x60.png)",
   "existing_features": [
     {
       "id": "feature-create-a-smart-study-timer-that-allows-users-to-set-study-duration-using-either-pomodoro-25-minute-intervals-or-custom-time-inputs-the-timer-ui-should-display-remaining-time-prominently-total-focused-time-paused-time-and-current-daily-streak-count",
@@ -370,6 +371,54 @@
         "REQ-45"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-create-a-clean-modern-logo-for-focusguard-that-represents-focus-discipline-and-productivity-the-logo-should-be-simple-minimal-and-easily-recognizable-use-a-professional-font-and-an-icon-that-matches-the-concept-of-protection-and-concentration-shield-target-or-focus-symbol-the-logo-must-work-well-in-both-light-and-dark-modes",
+      "title": "Create a clean, modern logo for FocusGuard that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable. Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol). The logo must work well in both light and dark modes.",
+      "reqIds": [
+        "REQ-46"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-place-the-focusguard-logo-in-the-top-left-corner-of-the-header-component-ensuring-it-is-prominently-displayed-and-properly-aligned-with-other-header-elements",
+      "title": "Place the FocusGuard logo in the top-left corner of the Header component, ensuring it is prominently displayed and properly aligned with other header elements.",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-dashboard-component-appearance-by-adding-soft-shades-depth-and-enhanced-visual-hierarchy-use-subtle-background-contrasts-refined-card-based-sections-with-rounded-corners-and-light-shadows-to-make-the-dashboard-feel-modern-and-less-flat",
+      "title": "Improve the Dashboard component appearance by adding soft shades, depth, and enhanced visual hierarchy. Use subtle background contrasts, refined card-based sections with rounded corners, and light shadows to make the dashboard feel modern and less flat.",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-light-mode-theming-across-all-components-with-soft-gray-or-tinted-backgrounds-and-gentle-shadows-for-visual-separation-ensure-the-color-palette-reduces-eye-strain-and-maintains-readability",
+      "title": "Refine light mode theming across all components with soft gray or tinted backgrounds and gentle shadows for visual separation. Ensure the color palette reduces eye strain and maintains readability.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-refine-dark-mode-theming-across-all-components-with-deep-dark-backgrounds-and-slightly-lighter-cards-for-smooth-contrast-ensure-readability-is-maintained-and-eye-strain-is-reduced-in-dark-mode",
+      "title": "Refine dark mode theming across all components with deep dark backgrounds and slightly lighter cards for smooth contrast. Ensure readability is maintained and eye strain is reduced in dark mode.",
+      "reqIds": [
+        "REQ-50"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-maintain-a-clean-distraction-free-layout-with-balanced-spacing-and-consistent-colors-across-both-light-and-dark-modes-the-final-design-should-feel-calm-premium-and-productivity-focused",
+      "title": "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both light and dark modes. The final design should feel calm, premium, and productivity-focused.",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -500,6 +549,24 @@
     {
       "id": "AR-32",
       "summary": "Add dark mode support and implement smooth, subtle animations throughout the app for a calm, focused study environment",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Add clean, modern logo to top-left header representing focus, discipline, and productivity with shield/target/focus icon and professional font",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-34",
+      "summary": "Enhance dashboard with soft shades, depth, and visual hierarchy using card-based sections, rounded corners, subtle shadows, and proper spacing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "Refine light mode with soft gray/tinted backgrounds and gentle shadows for separation, and dark mode with deep dark backgrounds and slightly lighter cards for smooth contrast",
       "reqIds": [],
       "status": "pending"
     }

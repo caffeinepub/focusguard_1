@@ -7,7 +7,7 @@ export default function Footer() {
     : 'focusguard-app';
 
   return (
-    <footer className="border-t border-border/40 bg-background/80 backdrop-blur-md">
+    <footer className="border-t border-border/40 bg-card/50 backdrop-blur-sm">
       <div className="container flex h-14 items-center justify-center">
         <p className="flex items-center gap-2 text-sm text-muted-foreground">
           <span>© {currentYear} FocusGuard. Built with</span>

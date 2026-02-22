@@ -1,365 +1,151 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Redesign UI/UX with clean minimal design and remove false face detection warnings",
+  "title": "Enhance visual design and branding with professional logo and refined UI theming",
   "requirements": [
     {
-      "id": "REQ-37",
-      "summary": "Redesign overall UI layout with minimal, modern design using better spacing, consistent typography, soft colors, and structured grid system with card-based sections",
+      "id": "REQ-46",
+      "summary": "Create a clean, modern FocusGuard logo with shield/target/focus icon and professional typography that works in both light and dark modes",
       "acceptanceCriteria": [
-        "All components use consistent spacing scale and typography",
-        "Card-based sections have rounded corners and subtle shadows",
-        "Grid layout system applied for structured content arrangement",
-        "Soft color palette used throughout the interface",
-        "Visual clutter reduced with cleaner component designs"
+        "Logo is visible in the top-left corner of the Header component",
+        "Logo design is simple, minimal, and professional",
+        "Logo includes an icon representing protection/focus (shield, target, or focus symbol)",
+        "Logo renders correctly in both light and dark theme modes",
+        "Logo uses a professional, readable font for the FocusGuard text"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Wire the generated logo image (frontend/public/assets/generated/focusguard-logo.dim_200x60.png) into the Header component by replacing the current text-based branding with an img element in the top-left corner. Ensure the logo is properly sized, has appropriate alt text, and is positioned before the navigation buttons. The image should render correctly in both light and dark themes without requiring theme-specific variants."
+        }
+      ]
+    },
+    {
+      "id": "REQ-47",
+      "summary": "Position the FocusGuard logo prominently in the top-left corner of the Header with proper alignment and spacing",
+      "acceptanceCriteria": [
+        "Logo appears in the top-left corner of the Header component",
+        "Logo is properly sized and does not overlap navigation elements",
+        "Logo alignment and spacing are consistent with the minimal design aesthetic"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Ensure the logo element in the Header has proper flex layout positioning to keep it in the top-left corner with appropriate spacing from navigation buttons. Adjust padding and margin values to maintain visual balance and prevent overlap with other header elements. Verify responsive behavior across different screen sizes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-48",
+      "summary": "Enhance Dashboard component with soft shadows, subtle background contrasts, rounded corners, and improved visual hierarchy for a modern, three-dimensional appearance",
+      "acceptanceCriteria": [
+        "Dashboard cards use soft shadows for depth perception",
+        "Card backgrounds have subtle contrast against the page background",
+        "Visual hierarchy clearly emphasizes key statistics and metrics",
+        "Dashboard feels modern and three-dimensional rather than flat",
+        "Design maintains the calm, productivity-focused aesthetic"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Apply refined visual styling to all card elements in the Dashboard by adding soft box-shadows (shadow-sm or shadow-md), ensuring rounded corners (rounded-lg), and creating subtle background contrasts between cards and the page background using existing Tailwind utility classes. Enhance visual hierarchy by adjusting text sizes, weights, and spacing to emphasize key metrics and statistics. Maintain the calm, productivity-focused aesthetic with balanced spacing and consistent styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-49",
+      "summary": "Refine light mode theming with soft gray/tinted backgrounds, gentle shadows, and eye-strain-reducing color palette across all components",
+      "acceptanceCriteria": [
+        "Light mode uses soft gray or subtly tinted backgrounds",
+        "Shadows in light mode are gentle and provide clear visual separation",
+        "Text contrast meets accessibility standards for readability",
+        "Color palette is designed to reduce eye strain during extended use",
+        "Background and foreground colors are balanced and comfortable to view"
       ],
       "file_operations": [
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Update global styles to implement a consistent design system with improved spacing scale (using rem units for 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px), refined typography with font-size scale and line-height values, and softer color palette in CSS variables for both light and dark themes. Add utility classes for card shadows, rounded corners, and grid layouts."
+          "description": "Update the CSS variables for light mode theme to use softer gray or subtly tinted background colors that reduce eye strain. Adjust --background, --card, --muted, and related variables to create gentle contrast while maintaining accessibility standards. Ensure shadow definitions are subtle yet provide clear visual separation. Verify all color values support comfortable extended viewing and maintain readability."
         },
         {
           "path": "frontend/tailwind.config.js",
           "operation": "modify",
-          "description": "Extend Tailwind configuration to include custom spacing scale, typography settings, border radius values for cards (rounded-lg, rounded-xl), box-shadow utilities for subtle card shadows, and grid column/gap configurations for structured layouts. Ensure theme colors align with the minimal, soft color palette."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Redesign header component with cleaner layout, improved spacing using the new design system, refined typography for branding, and card-based styling with subtle shadow. Apply minimal design aesthetic while maintaining navigation functionality."
-        },
-        {
-          "path": "frontend/src/components/Footer.tsx",
-          "operation": "modify",
-          "description": "Update footer with minimal design, improved spacing, and refined typography consistent with the new design system. Reduce visual clutter while maintaining attribution."
-        },
-        {
-          "path": "frontend/src/components/Dashboard.tsx",
-          "operation": "modify",
-          "description": "Redesign dashboard layout with grid system for organized sections, card-based containers with rounded corners and subtle shadows, improved spacing between elements, and refined typography hierarchy. Apply soft color palette and ensure visual consistency with the minimal design approach."
-        },
-        {
-          "path": "frontend/src/components/StudyTimer.tsx",
-          "operation": "modify",
-          "description": "Apply minimal design approach with card-based layout, improved spacing, refined typography, and soft colors. Use grid system for organized timer controls and statistics display. Add rounded corners and subtle shadows to card sections."
-        },
-        {
-          "path": "frontend/src/components/CameraMonitor.tsx",
-          "operation": "modify",
-          "description": "Redesign camera monitor with card-based layout, refined status indicators using consistent spacing and typography, soft colors for status badges, and minimal visual style. Apply rounded corners and subtle shadows to the container."
-        },
-        {
-          "path": "frontend/src/components/GoalSetting.tsx",
-          "operation": "modify",
-          "description": "Update goal setting card with improved spacing, refined typography, soft colors, and minimal design aesthetic. Ensure consistent card styling with rounded corners and subtle shadows."
-        },
-        {
-          "path": "frontend/src/components/MotivationalQuote.tsx",
-          "operation": "modify",
-          "description": "Redesign motivational quote card with cleaner layout, improved spacing, refined typography, and soft color palette. Apply consistent card styling with rounded corners and subtle shadows."
-        },
-        {
-          "path": "frontend/src/components/StudyGraph.tsx",
-          "operation": "modify",
-          "description": "Update chart styling with soft colors, refined typography for labels and tooltips, improved spacing, and minimal design aesthetic. Ensure chart integrates seamlessly with the card-based layout system."
+          "description": "Review and refine Tailwind theme configuration to ensure light mode shadow utilities (shadow-sm, shadow-md) are gentle and provide appropriate visual separation. Verify that the custom color extensions complement the updated CSS variables for a cohesive light mode experience that reduces eye strain."
         }
       ]
     },
     {
-      "id": "REQ-38",
-      "summary": "Reduce visual clutter by removing unnecessary text, alerts, and always-visible elements to create a calm, focused study environment",
+      "id": "REQ-50",
+      "summary": "Refine dark mode theming with deep dark backgrounds, lighter cards for smooth contrast, and eye-strain-reducing color palette",
       "acceptanceCriteria": [
-        "Unnecessary text and redundant labels removed",
-        "Non-essential alerts and warnings minimized",
-        "Interface maintains calm, minimal aesthetic",
-        "Only essential information displayed during study sessions"
+        "Dark mode uses deep dark backgrounds (not pure black)",
+        "Card elements are slightly lighter than the background for smooth contrast",
+        "Text contrast is sufficient for comfortable reading in dark mode",
+        "Shadows and depth cues work effectively in dark mode",
+        "Dark mode color palette reduces eye strain during nighttime use"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/CameraMonitor.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Remove verbose status text and redundant labels from camera monitoring interface. Keep only essential status indicators with icons and minimal text. Simplify the display to reduce visual noise while maintaining critical information visibility."
+          "description": "Update the CSS variables for dark mode theme (within .dark class) to use deep dark backgrounds (avoiding pure black) and slightly lighter card backgrounds for smooth contrast. Adjust --background, --card, --muted, and related dark mode variables to create comfortable viewing conditions that reduce eye strain during nighttime use. Ensure text contrast remains sufficient for readability and that shadow/depth cues remain effective in dark mode."
         },
         {
-          "path": "frontend/src/components/StudyTimer.tsx",
+          "path": "frontend/tailwind.config.js",
           "operation": "modify",
-          "description": "Remove unnecessary instructional text, redundant labels, and verbose messages. Keep interface minimal with essential timer information, controls, and statistics. Simplify session information display to reduce visual clutter."
-        },
-        {
-          "path": "frontend/src/components/Dashboard.tsx",
-          "operation": "modify",
-          "description": "Remove redundant explanatory text and verbose labels. Streamline statistics display to show only essential metrics with clear visual hierarchy. Eliminate unnecessary instructional messages while maintaining data clarity."
-        },
-        {
-          "path": "frontend/src/components/DistractionWarning.tsx",
-          "operation": "modify",
-          "description": "Simplify warning messages to be concise and non-intrusive. Remove verbose explanatory text while maintaining clear communication of the distraction type and necessary action."
-        },
-        {
-          "path": "frontend/src/components/SiteBlockWarning.tsx",
-          "operation": "modify",
-          "description": "Streamline site blocking alert to be minimal and clear. Remove unnecessary text while keeping essential information about blocked sites and session time."
-        },
-        {
-          "path": "frontend/src/components/MusicPlayer.tsx",
-          "operation": "modify",
-          "description": "Simplify music player interface by removing verbose labels and redundant text. Keep controls minimal and intuitive with icons and essential labels only."
+          "description": "Verify that dark mode shadow utilities and color configurations support the refined dark theme with appropriate depth cues and smooth contrast. Ensure the theme configuration complements the updated dark mode CSS variables for a cohesive nighttime viewing experience."
         }
       ]
     },
     {
-      "id": "REQ-39",
-      "summary": "Create strong hero section on homepage with prominent headline, FocusGuard tagline, and clear 'Start Focus Session' CTA button navigating to timer page",
+      "id": "REQ-51",
+      "summary": "Maintain clean, distraction-free layout with balanced spacing and consistent colors across both themes for a calm, premium, productivity-focused aesthetic",
       "acceptanceCriteria": [
-        "Hero section prominently displays FocusGuard headline",
-        "Tagline 'Stay Present. Stay Disciplined. Stay Ahead.' visible in hero",
-        "'Start Focus Session' button clearly visible and functional",
-        "Hero section creates strong visual impact as landing point"
+        "Spacing between components is balanced and consistent",
+        "Color scheme is consistent across both light and dark modes",
+        "Layout remains clean and uncluttered",
+        "Overall aesthetic feels premium and productivity-focused",
+        "Design maintains a calm atmosphere suitable for focused study work"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "create",
-          "description": "Create new homepage component with a strong hero section featuring the FocusGuard headline, tagline 'Stay Present. Stay Disciplined. Stay Ahead.', and a prominent 'Start Focus Session' button that navigates to /timer. Use the generated hero image at frontend/public/assets/generated/hero-study.dim_1200x600.png as a background or decorative element. Apply card-based layout with rounded corners, subtle shadows, and the minimal design system."
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Review and refine global styles to ensure consistent spacing, balanced margins/padding, and a cohesive color scheme across both light and dark modes. Add or adjust utility classes as needed to support a clean, uncluttered layout. Ensure the overall design conveys a calm, premium, productivity-focused aesthetic suitable for focused study work."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Add route configuration for the new HomePage component at path '/' (root). Ensure the hero section with 'Start Focus Session' button is the landing page and properly wired into the router. Update navigation structure to include the homepage route."
+          "description": "Review the root application layout and shared Header/Footer structure to ensure consistent spacing and visual balance across all pages. Verify that the ThemeProvider configuration supports smooth theme transitions and that the overall layout feels clean and distraction-free."
         },
         {
           "path": "frontend/src/components/Header.tsx",
           "operation": "modify",
-          "description": "Add navigation link to the homepage (/) in the header navigation menu. Ensure header provides clear navigation between Home, Timer, and Dashboard pages."
-        }
-      ]
-    },
-    {
-      "id": "REQ-40",
-      "summary": "Add feature cards to homepage showcasing Camera Monitoring, Focus Music, App Blocking, and Study Stats with icons, titles, and descriptions in clean card layout",
-      "acceptanceCriteria": [
-        "Four feature cards displayed in grid layout",
-        "Each card shows Camera Monitoring, Focus Music, App Blocking, or Study Stats",
-        "Cards include icons, titles, and concise descriptions",
-        "Cards use consistent styling with rounded corners and shadows"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Add a features section below the hero with four feature cards in a responsive grid layout (2x2 on desktop, single column on mobile). Each card represents: Camera Monitoring (with icon from frontend/public/assets/generated/icon-camera-active.dim_48x48.png), Focus Music, App Blocking, and Study Stats (with icon from frontend/public/assets/generated/icon-streak.dim_64x64.png). Include concise title and description for each feature. Apply card-based styling with rounded corners, subtle shadows, consistent spacing, and soft colors."
+          "description": "Ensure the Header maintains balanced spacing with other components and uses consistent colors from the refined theme. Verify that the header feels premium and uncluttered while supporting the productivity-focused aesthetic."
         },
         {
-          "path": "frontend/src/components/FeatureCard.tsx",
-          "operation": "create",
-          "description": "Create reusable FeatureCard component that accepts props for icon, title, and description. Apply consistent card styling with rounded corners, subtle shadows, improved spacing, and refined typography following the minimal design system."
-        }
-      ]
-    },
-    {
-      "id": "REQ-41",
-      "summary": "Improve Dashboard component with cleaner layout, better visual hierarchy, improved spacing, and organized sections emphasizing key statistics",
-      "acceptanceCriteria": [
-        "Dashboard layout improved with better spacing",
-        "Key statistics emphasized through visual hierarchy",
-        "Information organized in logical, scannable sections",
-        "Dashboard maintains minimal, uncluttered appearance"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Dashboard.tsx",
+          "path": "frontend/src/components/Footer.tsx",
           "operation": "modify",
-          "description": "Restructure dashboard layout with clear visual hierarchy: primary statistics in prominent card grid at top, secondary metrics in organized sections below. Use larger typography and visual weight for key stats (total study time, focus score, streak using icon from frontend/public/assets/generated/icon-streak.dim_64x64.png). Improve spacing between sections using the design system scale. Organize information in scannable, logical groupings with card-based containers."
-        },
-        {
-          "path": "frontend/src/components/StudyGraph.tsx",
-          "operation": "modify",
-          "description": "Enhance chart presentation with better visual hierarchy, improved spacing around chart elements, refined typography for axes and labels, and integration into the card-based layout system. Ensure chart emphasizes key data trends while maintaining minimal aesthetic."
-        }
-      ]
-    },
-    {
-      "id": "REQ-42",
-      "summary": "Implement comprehensive dark mode support with proper color theming maintaining readability and calm study environment aesthetic",
-      "acceptanceCriteria": [
-        "Dark mode toggle available and functional",
-        "All components properly themed for dark mode",
-        "Dark mode color scheme maintains high readability",
-        "Theme preference persisted across sessions"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ThemeToggle.tsx",
-          "operation": "create",
-          "description": "Create ThemeToggle component with a button to switch between light and dark modes. Use icons (sun/moon) for visual clarity. Apply minimal design with smooth transition. The component should use the existing ThemeProvider context to toggle themes."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Integrate ThemeToggle component into the header navigation, positioning it appropriately in the header layout. Ensure the toggle is accessible and visually consistent with the minimal design."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Enhance dark mode color variables to ensure comprehensive theming coverage. Define dark mode versions for all UI elements including cards, text, backgrounds, borders, and interactive states. Ensure high contrast and readability in dark mode while maintaining the calm, soft aesthetic."
-        },
-        {
-          "path": "frontend/src/components/Dashboard.tsx",
-          "operation": "modify",
-          "description": "Ensure all dashboard elements properly respond to theme changes. Verify card backgrounds, text colors, chart colors, and interactive elements display correctly in both light and dark modes."
-        },
-        {
-          "path": "frontend/src/components/StudyTimer.tsx",
-          "operation": "modify",
-          "description": "Update timer component styling to properly support dark mode. Ensure timer display, controls, and statistics are readable and visually appealing in both themes."
-        },
-        {
-          "path": "frontend/src/components/CameraMonitor.tsx",
-          "operation": "modify",
-          "description": "Apply dark mode theming to camera monitor interface. Ensure video preview container, status indicators, and controls are properly styled for both light and dark themes."
+          "description": "Ensure the Footer maintains balanced spacing and uses consistent colors from the refined theme, contributing to the overall calm and premium aesthetic."
         },
         {
           "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Ensure homepage hero section and feature cards properly support dark mode theming. Verify background images, text, and card elements display correctly in both themes."
-        }
-      ]
-    },
-    {
-      "id": "REQ-43",
-      "summary": "Add smooth, subtle animations for transitions, state changes, and interactions that enhance UX without being distracting",
-      "acceptanceCriteria": [
-        "Smooth transitions added for component state changes",
-        "Hover and click interactions include subtle animations",
-        "Animations are gentle and non-distracting",
-        "Animation duration and easing appropriate for study context"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend Tailwind animation configuration with custom animations for subtle UI interactions: fade-in, slide-in, scale-up, and pulse effects. Define easing functions (ease-in-out, ease-out) and duration values (150ms, 200ms, 300ms) appropriate for non-distracting study context."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add global CSS transition classes and keyframe animations for smooth state changes. Define animations for card hover effects, button interactions, modal appearances, and alert transitions. Use subtle timing and easing to avoid distraction."
-        },
-        {
-          "path": "frontend/src/components/Dashboard.tsx",
-          "operation": "modify",
-          "description": "Add smooth fade-in animations for dashboard cards and statistics as they load. Apply subtle hover animations to interactive elements. Use gentle transitions for stat updates and tab changes."
-        },
-        {
-          "path": "frontend/src/components/StudyTimer.tsx",
-          "operation": "modify",
-          "description": "Add smooth transitions for timer state changes (start, pause, complete). Apply subtle scale animations to control buttons on hover. Use gentle fade transitions for statistics updates."
-        },
-        {
-          "path": "frontend/src/components/DistractionWarning.tsx",
-          "operation": "modify",
-          "description": "Add smooth slide-in animation when warning appears and fade-out when dismissed. Ensure animation is noticeable but not jarring in the study context."
-        },
-        {
-          "path": "frontend/src/components/CyclePrompt.tsx",
-          "operation": "modify",
-          "description": "Add gentle fade-in and scale animation when cycle prompt modal appears. Apply subtle transitions to button hover states."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Add staggered fade-in animations for hero section elements and feature cards on page load. Apply subtle hover animations to feature cards and CTA button."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Add smooth transitions for navigation link hover states and active states. Apply subtle animations to theme toggle interaction."
-        }
-      ]
-    },
-    {
-      "id": "REQ-44",
-      "summary": "Remove 'Looking at the screen' warning from camera monitoring system in useFaceDetection and related components, keeping only face presence detection",
-      "acceptanceCriteria": [
-        "'Looking at the screen' warning no longer displayed",
-        "Gaze direction alerts removed from UI",
-        "Camera monitoring focuses only on face presence detection",
-        "No distracting warnings for minor head movements or looking away"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/hooks/useFaceDetection.ts",
-          "operation": "modify",
-          "description": "Remove gaze direction detection logic and related state. Focus detection only on face presence (whether a face is detected or not). Remove eye state tracking and gaze direction calculations. Simplify the hook to return only face detection status without gaze-related data."
-        },
-        {
-          "path": "frontend/src/components/CameraMonitor.tsx",
-          "operation": "modify",
-          "description": "Remove all UI elements displaying 'Looking at the screen' warnings or gaze direction status. Remove eye state indicators and gaze direction status badges. Display only face presence status (face detected or not detected) with minimal, non-intrusive indicators."
+          "description": "Review and refine HomePage layout to ensure feature cards and hero section maintain balanced spacing, consistent colors, and a clean, productivity-focused aesthetic. Verify that the page feels calm and uncluttered with appropriate visual hierarchy."
         },
         {
           "path": "frontend/src/pages/TimerPage.tsx",
           "operation": "modify",
-          "description": "Remove any logic or UI handling for gaze direction warnings. Ensure distraction detection focuses only on face presence loss, phone detection, and seated position without gaze-related checks."
+          "description": "Ensure TimerPage layout maintains balanced spacing between the timer, camera monitor, and other components. Verify consistent use of refined theme colors and that the overall page supports a calm, distraction-free study environment."
         },
         {
-          "path": "frontend/src/components/DistractionWarning.tsx",
+          "path": "frontend/src/pages/DashboardPage.tsx",
           "operation": "modify",
-          "description": "Remove distraction warning cases related to gaze direction or looking away. Keep only warnings for face-not-detected, phone detection, sleeping, and not-seated states."
-        }
-      ]
-    },
-    {
-      "id": "REQ-45",
-      "summary": "Ensure redesigned interface is fully responsive maintaining clean, minimal aesthetic on desktop and mobile with appropriate breakpoints and layout adjustments",
-      "acceptanceCriteria": [
-        "Layout adapts properly to mobile screen sizes",
-        "Desktop layout uses available space effectively",
-        "Typography scales appropriately across breakpoints",
-        "Touch targets sized appropriately for mobile interaction",
-        "Minimal design maintained across all screen sizes"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Configure responsive breakpoints (sm: 640px, md: 768px, lg: 1024px, xl: 1280px) and define responsive spacing, typography, and layout utilities. Set up responsive grid columns and gap values for mobile-first design."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add responsive typography scale using clamp() for fluid font sizing across breakpoints. Define responsive spacing utilities and container queries for adaptive layouts. Ensure touch target minimum sizes (44x44px) for mobile."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Implement responsive layout for hero section (full-width on mobile, constrained on desktop) and feature cards (single column on mobile, 2x2 grid on tablet/desktop). Ensure typography scales appropriately and touch targets are adequate for mobile."
-        },
-        {
-          "path": "frontend/src/components/Dashboard.tsx",
-          "operation": "modify",
-          "description": "Apply responsive grid layout for statistics cards (single column on mobile, multi-column on desktop). Ensure charts scale properly on mobile devices. Adjust spacing and typography for different screen sizes while maintaining minimal aesthetic."
-        },
-        {
-          "path": "frontend/src/components/StudyTimer.tsx",
-          "operation": "modify",
-          "description": "Implement responsive layout for timer display and controls (stacked on mobile, side-by-side on desktop). Ensure timer is readable and controls are easily tappable on mobile devices. Adjust spacing for different screen sizes."
-        },
-        {
-          "path": "frontend/src/components/CameraMonitor.tsx",
-          "operation": "modify",
-          "description": "Make camera preview responsive (full-width on mobile with appropriate aspect ratio, constrained width on desktop). Ensure status indicators and controls are appropriately sized for touch interaction on mobile."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Implement responsive navigation (hamburger menu on mobile, full navigation on desktop). Ensure logo and navigation elements scale appropriately and maintain minimal design across screen sizes."
-        },
-        {
-          "path": "frontend/src/components/MusicPlayer.tsx",
-          "operation": "modify",
-          "description": "Apply responsive layout to music player dialog (full-screen on mobile, modal on desktop). Ensure controls are appropriately sized for touch interaction on mobile devices."
+          "description": "Verify DashboardPage container maintains appropriate padding and spacing that aligns with the refined theme and overall productivity-focused aesthetic."
         }
       ]
     }
