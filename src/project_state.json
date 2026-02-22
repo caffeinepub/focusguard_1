@@ -1,0 +1,511 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "FocusGuard: A cross-platform study productivity web app with smart timer, AI-powered camera monitoring for face/distraction detection, website blocking during study sessions, background monitoring, and analytics dashboard with streaks and focus scores",
+  "architectural_notes": [
+    "React/Next.js frontend with TypeScript",
+    "Node.js backend for session management",
+    "TensorFlow.js or MediaPipe for browser-based face detection and distraction monitoring",
+    "Local storage or Firebase for analytics/session data",
+    "Browser Extension API for website blocking functionality",
+    "Responsive mobile + desktop design",
+    "All camera processing happens locally (no video upload/storage)",
+    "Background monitoring with Web Workers or service workers for minimized tab support",
+    "Eye tracking and gaze detection using TensorFlow.js FaceMesh or MediaPipe Face Landmarks",
+    "Audio alert system with soft notification sounds for detection warnings"
+  ],
+  "known_issues": [
+    "Browser extension website blocking cannot work in standalone web app - requires separate Chrome/Firefox extension installation",
+    "Background monitoring with camera when tab minimized has browser API limitations - may not work on all browsers",
+    "DNS-level blocking requires system-level permissions not available in web apps",
+    "App switching notifications may be blocked by browser privacy/permission policies",
+    "Mobile phone detection accuracy depends on MediaPipe object detection models which may need training data",
+    "Eye tracking accuracy depends on camera quality and lighting conditions - may have higher error rates in dim environments",
+    "Gaze direction detection has limited accuracy at extreme angles (>45 degrees from center)",
+    "3-second detection threshold may still cause false pauses if user briefly looks away or adjusts posture",
+    "App switching detection limited by browser API - may not detect all external app launches on mobile"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-smart-study-timer-that-allows-users-to-set-study-duration-using-either-pomodoro-25-minute-intervals-or-custom-time-inputs-the-timer-ui-should-display-remaining-time-prominently-total-focused-time-paused-time-and-current-daily-streak-count",
+      "title": "Create a smart study timer that allows users to set study duration using either Pomodoro (25-minute intervals) or custom time inputs. The timer UI should display remaining time prominently, total focused time, paused time, and current daily streak count.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-camera-monitoring-using-mediapipe-for-face-detection-that-detects-user-presence-face-orientation-and-whether-the-user-has-left-their-seat-when-face-is-not-detected-or-user-leaves-automatically-pause-the-timer-when-face-detection-resumes-automatically-resume-the-timer",
+      "title": "Implement camera monitoring using MediaPipe for face detection that detects user presence, face orientation, and whether the user has left their seat. When face is not detected or user leaves, automatically pause the timer. When face detection resumes, automatically resume the timer.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-mobile-phone-detection-to-camera-monitoring-using-mediapipe-object-detection-when-a-mobile-phone-is-detected-in-the-camera-frame-pause-the-timer-and-display-a-warning-message-back-to-study",
+      "title": "Add mobile phone detection to camera monitoring using MediaPipe object detection. When a mobile phone is detected in the camera frame, pause the timer and display a warning message 'Back to study!'.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-detect-sleeping-or-head-down-position-using-face-landmark-detection-when-user-s-head-angle-indicates-sleeping-or-head-down-on-desk-pause-the-timer-and-show-warning",
+      "title": "Detect sleeping or head-down position using face landmark detection. When user's head angle indicates sleeping or head down on desk, pause the timer and show warning.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-dashboard-that-displays-daily-study-hours-weekly-statistics-focus-score-percentage-of-focused-time-vs-total-session-time-streak-counter-session-history-list-and-visual-graphs-showing-study-patterns-over-time",
+      "title": "Build a dashboard that displays daily study hours, weekly statistics, focus score (percentage of focused time vs total session time), streak counter, session history list, and visual graphs showing study patterns over time.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-distraction-blocker-feature-that-shows-a-warning-page-when-users-try-to-access-youtube-instagram-facebook-x-twitter-or-whatsapp-during-an-active-study-session-display-message-stay-focused-come-back-after-session-ends-with-time-remaining",
+      "title": "Create a distraction blocker feature that shows a warning page when users try to access YouTube, Instagram, Facebook, X (Twitter), or WhatsApp during an active study session. Display message 'Stay focused. Come back after session ends.' with time remaining.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-camera-preview-window-that-shows-live-webcam-feed-with-face-detection-overlay-display-visual-indicators-showing-detection-status-face-detected-phone-detected-head-position-so-users-can-see-what-the-monitoring-system-detects",
+      "title": "Implement a camera preview window that shows live webcam feed with face detection overlay. Display visual indicators showing detection status (face detected, phone detected, head position) so users can see what the monitoring system detects.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-clean-minimal-dark-mode-ui-with-large-timer-display-as-focal-point-prominent-start-pause-button-motivational-quotes-that-change-periodically-and-responsive-layout-that-works-on-mobile-and-desktop-screens",
+      "title": "Design a clean, minimal dark mode UI with large timer display as focal point, prominent start/pause button, motivational quotes that change periodically, and responsive layout that works on mobile and desktop screens.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-pomodoro-auto-cycle-mode-that-automatically-starts-5-minute-break-after-25-minute-study-session-then-prompts-user-to-start-next-study-cycle-track-completed-pomodoro-cycles-in-session-data",
+      "title": "Add Pomodoro auto-cycle mode that automatically starts 5-minute break after 25-minute study session, then prompts user to start next study cycle. Track completed Pomodoro cycles in session data.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-study-goals-feature-where-users-can-set-daily-study-time-targets-e-g-2-hours-per-day-and-track-progress-toward-goal-with-visual-progress-bar-on-dashboard",
+      "title": "Create study goals feature where users can set daily study time targets (e.g., '2 hours per day') and track progress toward goal with visual progress bar on dashboard.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-background-music-player-with-focus-friendly-audio-options-ambient-lo-fi-nature-sounds-music-should-play-during-study-sessions-and-pause-during-breaks-include-volume-control-and-track-selection",
+      "title": "Add background music player with focus-friendly audio options (ambient, lo-fi, nature sounds). Music should play during study sessions and pause during breaks. Include volume control and track selection.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-upgrade-face-detection-system-to-implement-eye-tracking-and-gaze-direction-detection-using-tensorflow-js-or-mediapipe-continuously-monitor-whether-eyes-are-open-and-whether-user-is-looking-toward-the-screen",
+      "title": "Upgrade face detection system to implement eye tracking and gaze direction detection using TensorFlow.js or MediaPipe. Continuously monitor whether eyes are open and whether user is looking toward the screen.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-3-second-threshold-for-face-detection-loss-before-auto-pausing-the-timer-when-face-is-not-detected-for-more-than-3-seconds-automatically-pause-the-timer-display-on-screen-warning-face-not-detected-return-to-study-and-play-a-soft-alert-sound",
+      "title": "Implement 3-second threshold for face detection loss before auto-pausing the timer. When face is not detected for more than 3 seconds, automatically pause the timer, display on-screen warning 'Face not detected — return to study', and play a soft alert sound.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-immediate-timer-pause-when-user-leaves-seat-or-moves-away-from-the-camera-detect-user-leaving-seat-position-and-pause-timer-without-delay",
+      "title": "Add immediate timer pause when user leaves seat or moves away from the camera. Detect user leaving seat position and pause timer without delay.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-phone-or-distraction-object-is-detected-in-camera-frame-pause-timer-immediately-and-show-warning-message-put-your-phone-away",
+      "title": "When phone or distraction object is detected in camera frame, pause timer immediately and show warning message 'Put your phone away'.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-camera-detection-accuracy-with-low-light-support-smoother-real-time-tracking-and-reduced-false-pause-occurrences-optimize-detection-algorithms-to-minimize-false-positives-from-brief-movements-or-lighting-changes",
+      "title": "Improve camera detection accuracy with low-light support, smoother real-time tracking, and reduced false pause occurrences. Optimize detection algorithms to minimize false positives from brief movements or lighting changes.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-focus-music-section-in-the-ui-with-built-in-study-music-categories-lo-fi-instrumental-white-noise-nature-sounds-and-soft-classical-include-playlist-selection-interface-with-category-buttons-or-dropdown",
+      "title": "Create a 'Focus Music' section in the UI with built-in study music categories: Lo-fi, Instrumental, White noise, Nature sounds, and Soft classical. Include playlist selection interface with category buttons or dropdown.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-auto-play-functionality-that-starts-music-automatically-when-study-timer-starts-and-stops-music-automatically-when-timer-pauses-or-ends",
+      "title": "Implement auto-play functionality that starts music automatically when study timer starts and stops music automatically when timer pauses or ends.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-volume-control-slider-to-the-music-player-with-visual-feedback-and-percentage-display-users-should-be-able-to-adjust-music-volume-independently-of-system-volume",
+      "title": "Add volume control slider to the music player with visual feedback and percentage display. Users should be able to adjust music volume independently of system volume.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-loop-mode-toggle-that-continuously-replays-selected-music-playlist-or-track-music-should-loop-seamlessly-without-gaps-or-restart-delays",
+      "title": "Implement loop mode toggle that continuously replays selected music playlist or track. Music should loop seamlessly without gaps or restart delays.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enable-offline-playback-support-by-bundling-focus-music-audio-files-as-static-assets-or-using-service-worker-caching-music-should-play-without-requiring-active-internet-connection",
+      "title": "Enable offline playback support by bundling focus music audio files as static assets or using service worker caching. Music should play without requiring active internet connection.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-face-detection-stability-in-usefacedetection-hook-to-reduce-false-looking-away-alerts-when-user-is-reading-notes-writing-or-slightly-turning-head-implement-adaptive-thresholds-that-distinguish-between-legitimate-study-movements-reading-writing-note-taking-and-actual-distraction-looking-away-from-study-area-use-temporal-smoothing-and-movement-pattern-analysis-to-avoid-triggering-alerts-for-brief-head-movements-or-posture-adjustments-during-focused-work",
+      "title": "Enhance face detection stability in useFaceDetection hook to reduce false 'looking away' alerts when user is reading notes, writing, or slightly turning head. Implement adaptive thresholds that distinguish between legitimate study movements (reading, writing, note-taking) and actual distraction (looking away from study area). Use temporal smoothing and movement pattern analysis to avoid triggering alerts for brief head movements or posture adjustments during focused work.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-posture-recognition-accuracy-in-useposedetection-hook-to-better-identify-when-user-is-genuinely-studying-versus-distracted-reduce-false-alerts-for-normal-study-postures-such-as-leaning-forward-to-write-sitting-back-to-read-or-shifting-position-for-comfort-implement-more-sophisticated-posture-analysis-that-accounts-for-natural-study-movements",
+      "title": "Improve posture recognition accuracy in usePoseDetection hook to better identify when user is genuinely studying versus distracted. Reduce false alerts for normal study postures such as leaning forward to write, sitting back to read, or shifting position for comfort. Implement more sophisticated posture analysis that accounts for natural study movements.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-optimize-real-time-tracking-performance-across-usefacedetection-useobjectdetection-and-useposedetection-hooks-to-provide-smoother-more-reliable-monitoring-reduce-computational-overhead-and-improve-frame-processing-efficiency-to-maintain-accurate-detection-even-during-extended-study-sessions",
+      "title": "Optimize real-time tracking performance across useFaceDetection, useObjectDetection, and usePoseDetection hooks to provide smoother, more reliable monitoring. Reduce computational overhead and improve frame processing efficiency to maintain accurate detection even during extended study sessions.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-comprehensive-study-analytics-to-dashboard-component-including-total-study-time-focused-time-break-time-and-distraction-count-display-these-metrics-prominently-with-clear-labels-icons-and-formatting-for-easy-comprehension",
+      "title": "Add comprehensive study analytics to Dashboard component including total study time, focused time, break time, and distraction count. Display these metrics prominently with clear labels, icons, and formatting for easy comprehension.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-daily-and-weekly-progress-charts-to-dashboard-component-showing-study-patterns-over-time-implement-visual-graphs-that-display-study-hours-per-day-for-the-current-week-and-cumulative-progress-include-interactive-tooltips-and-clear-axis-labels",
+      "title": "Add daily and weekly progress charts to Dashboard component showing study patterns over time. Implement visual graphs that display study hours per day for the current week and cumulative progress. Include interactive tooltips and clear axis labels.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-performance-insights-section-to-dashboard-component-that-provides-actionable-feedback-based-on-study-patterns-include-insights-such-as-best-study-hours-consistency-trends-focus-quality-analysis-and-personalized-recommendations-for-improvement",
+      "title": "Add performance insights section to Dashboard component that provides actionable feedback based on study patterns. Include insights such as best study hours, consistency trends, focus quality analysis, and personalized recommendations for improvement.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-dashboard-component-layout-to-be-clean-visual-and-motivating-use-card-based-layout-with-icons-color-coded-metrics-and-visual-hierarchy-that-emphasizes-key-statistics-ensure-the-design-is-modern-uncluttered-and-encourages-continued-use",
+      "title": "Redesign Dashboard component layout to be clean, visual, and motivating. Use card-based layout with icons, color-coded metrics, and visual hierarchy that emphasizes key statistics. Ensure the design is modern, uncluttered, and encourages continued use.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-tagline-focusguard-stay-present-stay-disciplined-stay-ahead-to-the-header-component-displaying-it-prominently-below-or-next-to-the-focusguard-logo-as-a-subtitle-or-motto",
+      "title": "Add the tagline 'FocusGuard – Stay Present. Stay Disciplined. Stay Ahead.' to the Header component, displaying it prominently below or next to the FocusGuard logo as a subtitle or motto.",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-always-visible-musicplayer-component-with-a-focus-music-button-in-the-ui-when-clicked-the-button-should-open-a-small-pop-up-or-panel-containing-the-music-player-controls-play-pause-track-selection-volume-slider-loop-mode-the-panel-should-be-dismissible-to-keep-the-screen-clean-and-distraction-free-when-not-actively-controlling-music",
+      "title": "Replace the always-visible MusicPlayer component with a 'Focus Music' button in the UI. When clicked, the button should open a small pop-up or panel containing the music player controls (play/pause, track selection, volume slider, loop mode). The panel should be dismissible to keep the screen clean and distraction-free when not actively controlling music.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-functionality-to-allow-users-to-import-and-play-downloaded-music-files-directly-from-their-device-local-storage-downloads-folder-file-manager-support-common-audio-formats-including-mp3-wav-aac-ogg-and-flac-provide-a-file-picker-ui-within-the-music-panel-and-allow-users-to-create-custom-playlists-from-imported-files",
+      "title": "Add functionality to allow users to import and play downloaded music files directly from their device (local storage, downloads folder, file manager). Support common audio formats including MP3, WAV, AAC, OGG, and FLAC. Provide a file picker UI within the music panel and allow users to create custom playlists from imported files.",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-automatic-distraction-detection-that-monitors-when-the-user-opens-external-apps-such-as-whatsapp-instagram-x-twitter-or-tiktok-when-any-of-these-apps-are-detected-as-active-automatically-pause-the-study-timer-the-timer-should-only-resume-when-the-user-closes-those-apps-and-returns-to-the-focusguard-study-screen",
+      "title": "Implement automatic distraction detection that monitors when the user opens external apps such as WhatsApp, Instagram, X (Twitter), or TikTok. When any of these apps are detected as active, automatically pause the study timer. The timer should only resume when the user closes those apps and returns to the FocusGuard study screen.",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-distraction-time-tracking-to-study-statistics-record-the-total-time-spent-away-from-the-study-screen-due-to-opening-external-distraction-apps-whatsapp-instagram-x-tiktok-display-distraction-time-as-a-separate-metric-in-the-dashboard-component-alongside-focused-time-break-time-and-distraction-count-include-this-metric-in-session-history-and-weekly-analytics",
+      "title": "Add 'Distraction Time' tracking to study statistics. Record the total time spent away from the study screen due to opening external distraction apps (WhatsApp, Instagram, X, TikTok). Display 'Distraction Time' as a separate metric in the Dashboard component alongside focused time, break time, and distraction count. Include this metric in session history and weekly analytics.",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-usetimer-hook-to-integrate-automatic-timer-pause-resume-functionality-when-external-distraction-apps-are-detected-ensure-that-distraction-time-is-tracked-separately-from-paused-time-and-focused-time-and-that-this-data-is-passed-to-the-backend-when-recording-completed-study-sessions",
+      "title": "Update the useTimer hook to integrate automatic timer pause/resume functionality when external distraction apps are detected. Ensure that distraction time is tracked separately from paused time and focused time, and that this data is passed to the backend when recording completed study sessions.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-redesign-the-overall-ui-layout-with-a-minimal-modern-design-approach-using-better-spacing-consistent-typography-soft-colors-and-a-structured-grid-system-apply-card-based-sections-with-rounded-corners-and-subtle-shadows-throughout-all-components-to-create-a-professional-distraction-free-look",
+      "title": "Redesign the overall UI layout with a minimal, modern design approach using better spacing, consistent typography, soft colors, and a structured grid system. Apply card-based sections with rounded corners and subtle shadows throughout all components to create a professional, distraction-free look.",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-reduce-visual-clutter-across-all-components-by-removing-unnecessary-text-alerts-and-always-visible-elements-simplify-the-interface-to-create-a-calm-focused-environment-suitable-for-studying",
+      "title": "Reduce visual clutter across all components by removing unnecessary text, alerts, and always-visible elements. Simplify the interface to create a calm, focused environment suitable for studying.",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-strong-hero-section-on-the-homepage-with-a-prominent-headline-the-focusguard-tagline-and-a-clear-start-focus-session-call-to-action-button-that-navigates-to-the-timer-page",
+      "title": "Create a strong hero section on the homepage with a prominent headline, the FocusGuard tagline, and a clear 'Start Focus Session' call-to-action button that navigates to the timer page.",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-clear-feature-cards-to-the-homepage-showcasing-the-four-main-features-camera-monitoring-focus-music-app-blocking-and-study-stats-each-card-should-have-an-icon-title-and-brief-description-in-a-clean-card-based-layout",
+      "title": "Add clear feature cards to the homepage showcasing the four main features: Camera Monitoring, Focus Music, App Blocking, and Study Stats. Each card should have an icon, title, and brief description in a clean card-based layout.",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-improve-the-dashboard-component-to-be-cleaner-and-easier-to-read-with-better-visual-hierarchy-improved-spacing-and-organized-sections-that-emphasize-key-statistics-without-overwhelming-the-user",
+      "title": "Improve the Dashboard component to be cleaner and easier to read with better visual hierarchy, improved spacing, and organized sections that emphasize key statistics without overwhelming the user.",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-comprehensive-dark-mode-support-across-the-entire-application-with-proper-color-theming-that-maintains-readability-and-the-calm-study-environment-aesthetic",
+      "title": "Implement comprehensive dark mode support across the entire application with proper color theming that maintains readability and the calm study environment aesthetic.",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-smooth-subtle-animations-throughout-the-application-for-transitions-state-changes-and-interactions-animations-should-be-minimal-and-enhance-the-user-experience-without-being-distracting",
+      "title": "Add smooth, subtle animations throughout the application for transitions, state changes, and interactions. Animations should be minimal and enhance the user experience without being distracting.",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-looking-at-the-screen-warning-message-completely-from-the-camera-monitoring-system-in-the-usefacedetection-hook-and-related-components-do-not-display-this-alert-anymore-only-detect-whether-the-user-is-present-or-absent-using-face-detection-without-showing-gaze-related-warnings",
+      "title": "Remove the 'Looking at the screen' warning message completely from the camera monitoring system in the useFaceDetection hook and related components. Do not display this alert anymore. Only detect whether the user is present or absent using face detection without showing gaze-related warnings.",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-redesigned-interface-is-fully-responsive-and-maintains-the-clean-minimal-aesthetic-on-both-desktop-and-mobile-screen-sizes-with-appropriate-breakpoints-and-layout-adjustments",
+      "title": "Ensure the redesigned interface is fully responsive and maintains the clean, minimal aesthetic on both desktop and mobile screen sizes with appropriate breakpoints and layout adjustments.",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Smart study timer with Pomodoro/custom durations that auto-pauses when user leaves seat, looks away, or phone detected, and auto-resumes when returning",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Camera monitoring using TensorFlow.js/MediaPipe for face detection, user presence, phone detection, and sleeping/head-down detection with pause warnings",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Distraction blocker for YouTube, Instagram, Facebook, X, WhatsApp, and Google (except educational sites) using browser extension/DNS/focus redirect",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Background monitoring that keeps camera active when tab minimized and sends notifications when user switches apps",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Dashboard showing daily/weekly study hours, focus score, streak counter, graphs, and session history",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Clean minimal dark mode UI with large timer display, start/pause button, camera preview, and motivational quotes",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Bonus features: Pomodoro auto-cycles, background music, study goals, friend leaderboard, hard mode blocking, AI voice reminders",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Create backend API to track and store study sessions with start time, end time, focused duration, paused duration, and distraction events. Calculate daily streak based on consecutive days with at least one study session.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Enhanced AI camera monitoring with eye tracking, gaze direction detection, 3-second face detection threshold, soft alert sounds, and improved accuracy with low-light support and fewer false pauses",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Study music mode with built-in focus music (lo-fi, instrumental, white noise, nature sounds, classical), auto-play on timer start, volume control, playlist selection, loop mode, offline playback, and optional Spotify integration",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Improve AI camera monitoring accuracy to reduce false alerts when user reads notes, writes, or slightly turns head. Enhance face detection stability, posture recognition, and real-time tracking to minimize false 'looking away' detections during legitimate study activities.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Upgrade statistics/analytics dashboard with detailed metrics: total study time, focus time, break time, distraction count, daily/weekly progress charts, and performance insights. Make dashboard clean, visual, and motivating.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add inspiring tagline to FocusGuard website: 'FocusGuard – Stay Present. Stay Disciplined. Stay Ahead.'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Add distraction count tracking to backend main.mo to store the number of distractions that occurred during each study session. Update the Session type to include a distractionCount field and modify recordSession to accept this parameter.",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Replace always-visible music bar with 'Focus Music' button that opens a pop-up/panel for play/pause, track selection, and volume control. Keep screen clean when music UI is closed.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Add local music import feature allowing users to upload and play downloaded music files from device storage. Support common audio formats (MP3, WAV, AAC, etc.) and allow users to create custom playlists.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Implement automatic distraction detection that pauses study timer when user opens WhatsApp, Instagram, X, or TikTok apps, and resumes timer only when user returns to study screen. Track interruptions as 'Distraction Time' in statistics.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Redesign UI/UX with minimal, clean, modern design: better spacing, consistent typography, soft colors, grid layout, card-based sections, rounded corners, subtle shadows, reduced visual clutter, and professional look",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Add homepage hero section with headline, tagline, and 'Start Focus Session' button, along with clear feature cards for Camera Monitoring, Focus Music, App Blocking, and Study Stats",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Remove 'Looking at the screen' warning from camera monitoring to prevent false detections and distractions. Only detect user presence (face detected or not) without unnecessary alerts.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "Add dark mode support and implement smooth, subtle animations throughout the app for a calm, focused study environment",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "FocusGuard",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
