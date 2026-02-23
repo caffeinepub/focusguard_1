@@ -1,151 +1,83 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Enhance visual design and branding with professional logo and refined UI theming",
+  "title": "Revert FocusGuard to Version 5 Styling",
   "requirements": [
     {
-      "id": "REQ-46",
-      "summary": "Create a clean, modern FocusGuard logo with shield/target/focus icon and professional typography that works in both light and dark modes",
+      "id": "REQ-52",
+      "summary": "Remove the FocusGuard logo from the Header component that was added in Version 6",
       "acceptanceCriteria": [
-        "Logo is visible in the top-left corner of the Header component",
-        "Logo design is simple, minimal, and professional",
-        "Logo includes an icon representing protection/focus (shield, target, or focus symbol)",
-        "Logo renders correctly in both light and dark theme modes",
-        "Logo uses a professional, readable font for the FocusGuard text"
+        "The logo image or logo component is removed from the Header component",
+        "The header displays only navigation buttons and theme toggle as in Version 5"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Header.tsx",
           "operation": "modify",
-          "description": "Wire the generated logo image (frontend/public/assets/generated/focusguard-logo.dim_200x60.png) into the Header component by replacing the current text-based branding with an img element in the top-left corner. Ensure the logo is properly sized, has appropriate alt text, and is positioned before the navigation buttons. The image should render correctly in both light and dark themes without requiring theme-specific variants."
+          "description": "Remove the logo/brand image element from the Header component. Keep only the navigation links (Home, Timer, Dashboard) and the ThemeToggle component. Ensure the header layout remains centered and functional without the logo branding."
         }
       ]
     },
     {
-      "id": "REQ-47",
-      "summary": "Position the FocusGuard logo prominently in the top-left corner of the Header with proper alignment and spacing",
+      "id": "REQ-53",
+      "summary": "Revert Dashboard component styling to Version 5 appearance by removing enhanced visual depth and refined card shadows",
       "acceptanceCriteria": [
-        "Logo appears in the top-left corner of the Header component",
-        "Logo is properly sized and does not overlap navigation elements",
-        "Logo alignment and spacing are consistent with the minimal design aesthetic"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Ensure the logo element in the Header has proper flex layout positioning to keep it in the top-left corner with appropriate spacing from navigation buttons. Adjust padding and margin values to maintain visual balance and prevent overlap with other header elements. Verify responsive behavior across different screen sizes."
-        }
-      ]
-    },
-    {
-      "id": "REQ-48",
-      "summary": "Enhance Dashboard component with soft shadows, subtle background contrasts, rounded corners, and improved visual hierarchy for a modern, three-dimensional appearance",
-      "acceptanceCriteria": [
-        "Dashboard cards use soft shadows for depth perception",
-        "Card backgrounds have subtle contrast against the page background",
-        "Visual hierarchy clearly emphasizes key statistics and metrics",
-        "Dashboard feels modern and three-dimensional rather than flat",
-        "Design maintains the calm, productivity-focused aesthetic"
+        "Dashboard uses the simpler card-based layout from Version 5 without the enhanced depth effects",
+        "Background contrasts and shadow refinements from Version 6 are removed",
+        "Visual hierarchy matches Version 5 implementation"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Dashboard.tsx",
           "operation": "modify",
-          "description": "Apply refined visual styling to all card elements in the Dashboard by adding soft box-shadows (shadow-sm or shadow-md), ensuring rounded corners (rounded-lg), and creating subtle background contrasts between cards and the page background using existing Tailwind utility classes. Enhance visual hierarchy by adjusting text sizes, weights, and spacing to emphasize key metrics and statistics. Maintain the calm, productivity-focused aesthetic with balanced spacing and consistent styling."
-        }
-      ]
-    },
-    {
-      "id": "REQ-49",
-      "summary": "Refine light mode theming with soft gray/tinted backgrounds, gentle shadows, and eye-strain-reducing color palette across all components",
-      "acceptanceCriteria": [
-        "Light mode uses soft gray or subtly tinted backgrounds",
-        "Shadows in light mode are gentle and provide clear visual separation",
-        "Text contrast meets accessibility standards for readability",
-        "Color palette is designed to reduce eye strain during extended use",
-        "Background and foreground colors are balanced and comfortable to view"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Update the CSS variables for light mode theme to use softer gray or subtly tinted background colors that reduce eye strain. Adjust --background, --card, --muted, and related variables to create gentle contrast while maintaining accessibility standards. Ensure shadow definitions are subtle yet provide clear visual separation. Verify all color values support comfortable extended viewing and maintain readability."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Review and refine Tailwind theme configuration to ensure light mode shadow utilities (shadow-sm, shadow-md) are gentle and provide appropriate visual separation. Verify that the custom color extensions complement the updated CSS variables for a cohesive light mode experience that reduces eye strain."
-        }
-      ]
-    },
-    {
-      "id": "REQ-50",
-      "summary": "Refine dark mode theming with deep dark backgrounds, lighter cards for smooth contrast, and eye-strain-reducing color palette",
-      "acceptanceCriteria": [
-        "Dark mode uses deep dark backgrounds (not pure black)",
-        "Card elements are slightly lighter than the background for smooth contrast",
-        "Text contrast is sufficient for comfortable reading in dark mode",
-        "Shadows and depth cues work effectively in dark mode",
-        "Dark mode color palette reduces eye strain during nighttime use"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Update the CSS variables for dark mode theme (within .dark class) to use deep dark backgrounds (avoiding pure black) and slightly lighter card backgrounds for smooth contrast. Adjust --background, --card, --muted, and related dark mode variables to create comfortable viewing conditions that reduce eye strain during nighttime use. Ensure text contrast remains sufficient for readability and that shadow/depth cues remain effective in dark mode."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Verify that dark mode shadow utilities and color configurations support the refined dark theme with appropriate depth cues and smooth contrast. Ensure the theme configuration complements the updated dark mode CSS variables for a cohesive nighttime viewing experience."
-        }
-      ]
-    },
-    {
-      "id": "REQ-51",
-      "summary": "Maintain clean, distraction-free layout with balanced spacing and consistent colors across both themes for a calm, premium, productivity-focused aesthetic",
-      "acceptanceCriteria": [
-        "Spacing between components is balanced and consistent",
-        "Color scheme is consistent across both light and dark modes",
-        "Layout remains clean and uncluttered",
-        "Overall aesthetic feels premium and productivity-focused",
-        "Design maintains a calm atmosphere suitable for focused study work"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Review and refine global styles to ensure consistent spacing, balanced margins/padding, and a cohesive color scheme across both light and dark modes. Add or adjust utility classes as needed to support a clean, uncluttered layout. Ensure the overall design conveys a calm, premium, productivity-focused aesthetic suitable for focused study work."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Review the root application layout and shared Header/Footer structure to ensure consistent spacing and visual balance across all pages. Verify that the ThemeProvider configuration supports smooth theme transitions and that the overall layout feels clean and distraction-free."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Ensure the Header maintains balanced spacing with other components and uses consistent colors from the refined theme. Verify that the header feels premium and uncluttered while supporting the productivity-focused aesthetic."
-        },
-        {
-          "path": "frontend/src/components/Footer.tsx",
-          "operation": "modify",
-          "description": "Ensure the Footer maintains balanced spacing and uses consistent colors from the refined theme, contributing to the overall calm and premium aesthetic."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Review and refine HomePage layout to ensure feature cards and hero section maintain balanced spacing, consistent colors, and a clean, productivity-focused aesthetic. Verify that the page feels calm and uncluttered with appropriate visual hierarchy."
-        },
-        {
-          "path": "frontend/src/pages/TimerPage.tsx",
-          "operation": "modify",
-          "description": "Ensure TimerPage layout maintains balanced spacing between the timer, camera monitor, and other components. Verify consistent use of refined theme colors and that the overall page supports a calm, distraction-free study environment."
+          "description": "Simplify card shadows and remove enhanced depth styling from metric cards, graph containers, and insight sections. Revert to Version 5's simpler shadow classes and background treatments. Remove any gradient backgrounds or refined contrast enhancements added in Version 6."
         },
         {
           "path": "frontend/src/pages/DashboardPage.tsx",
           "operation": "modify",
-          "description": "Verify DashboardPage container maintains appropriate padding and spacing that aligns with the refined theme and overall productivity-focused aesthetic."
+          "description": "Remove or simplify the gradient background styling to match Version 5's simpler page background. Revert any enhanced container styling or depth effects that were added in Version 6."
+        }
+      ]
+    },
+    {
+      "id": "REQ-54",
+      "summary": "Restore light mode theming to Version 5 color palette by reverting soft gray/tinted backgrounds and gentle shadows",
+      "acceptanceCriteria": [
+        "Light mode uses the Version 5 color scheme",
+        "Soft gray backgrounds and refined shadows from Version 6 are removed",
+        "All components display with Version 5 light mode styling"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Revert the light mode CSS custom properties to Version 5 values. Remove soft gray/tinted backgrounds and refined shadow definitions that were added in Version 6. Restore the simpler, higher-contrast light mode color scheme from Version 5."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Remove or revert any Version 6 shadow utilities, color refinements, or OKLCH color enhancements in the light mode theme configuration. Restore Version 5's simpler shadow scale and color definitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-55",
+      "summary": "Restore dark mode theming to Version 5 appearance by reverting deep dark backgrounds and refined card contrast",
+      "acceptanceCriteria": [
+        "Dark mode uses the Version 5 color scheme",
+        "Enhanced background depth and card contrast from Version 6 are removed",
+        "All components display with Version 5 dark mode styling"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Revert the dark mode CSS custom properties to Version 5 values. Remove deep dark backgrounds and refined card contrast enhancements from Version 6. Restore the simpler dark mode color palette that existed in Version 5."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Remove or revert any Version 6 dark mode theme refinements including enhanced background depth utilities and refined contrast settings. Restore Version 5's simpler dark mode configuration."
         }
       ]
     }

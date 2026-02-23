@@ -54,7 +54,7 @@ export default function Dashboard() {
 
       {/* Key Metrics Grid */}
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up">
+        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Total Study Time</CardTitle>
             <Clock className="h-5 w-5 text-primary" />
@@ -65,7 +65,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="border-accent/20 bg-gradient-to-br from-accent/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: '50ms' }}>
+        <Card className="border-accent/20 bg-gradient-to-br from-accent/5 to-transparent">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Focused Time</CardTitle>
             <Brain className="h-5 w-5 text-accent" />
@@ -76,7 +76,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="border-secondary/20 bg-gradient-to-br from-secondary/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: '100ms' }}>
+        <Card className="border-secondary/20 bg-gradient-to-br from-secondary/5 to-transparent">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Focus Score</CardTitle>
             <TrendingUp className="h-5 w-5 text-secondary" />
@@ -87,7 +87,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-transparent rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 animate-slide-up" style={{ animationDelay: '150ms' }}>
+        <Card className="border-orange-500/20 bg-gradient-to-br from-orange-500/5 to-transparent">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Daily Streak</CardTitle>
             <Flame className="h-5 w-5 text-orange-500" />
@@ -104,7 +104,7 @@ export default function Dashboard() {
 
       {/* Secondary Metrics */}
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <Card className="rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 bg-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Today's Progress</CardTitle>
             <Target className="h-4 w-4 text-muted-foreground" />
@@ -118,7 +118,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 bg-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Break Time</CardTitle>
             <Coffee className="h-4 w-4 text-muted-foreground" />
@@ -129,7 +129,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all duration-300 bg-card">
+        <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
             <CardTitle className="text-sm font-medium">Distractions</CardTitle>
             <AlertTriangle className="h-4 w-4 text-muted-foreground" />
@@ -143,7 +143,7 @@ export default function Dashboard() {
 
       {/* Charts and Insights */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="rounded-xl shadow-soft-lg bg-card">
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Calendar className="h-5 w-5" />
@@ -155,7 +155,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="rounded-xl shadow-soft-lg bg-card">
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Target className="h-5 w-5" />
@@ -169,16 +169,16 @@ export default function Dashboard() {
       </div>
 
       {/* Detailed Stats Tabs */}
-      <Card className="rounded-xl shadow-soft-lg bg-card">
+      <Card>
         <CardHeader>
           <CardTitle>Detailed Statistics</CardTitle>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 rounded-lg">
-              <TabsTrigger value="overview" className="rounded-lg">Overview</TabsTrigger>
-              <TabsTrigger value="trends" className="rounded-lg">Trends</TabsTrigger>
-              <TabsTrigger value="insights" className="rounded-lg">Insights</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="trends">Trends</TabsTrigger>
+              <TabsTrigger value="insights">Insights</TabsTrigger>
             </TabsList>
 
             <TabsContent value="overview" className="space-y-4 mt-6">

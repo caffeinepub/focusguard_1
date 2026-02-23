@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-clean-modern-logo-for-focusguard-that-represents-focus-discipline-and-productivity-the-logo-should-be-simple-minimal-and-easily-recognizable-use-a-professional-font-and-an-icon-that-matches-the-concept-of-protection-and-concentration-shield-target-or-focus-symbol-the-logo-must-work-well-in-both-light-and-dark-modes",
-      "featureTitle": "Create a clean, modern logo for FocusGuard that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable. Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol). The logo must work well in both light and dark modes.",
+      "featureId": "feature-remove-the-focusguard-logo-from-the-header-component-that-was-added-in-version-6",
+      "featureTitle": "Remove the FocusGuard logo from the Header component that was added in Version 6",
       "files": [
         "frontend/src/components/Header.tsx"
       ],
@@ -17,15 +17,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-46"
+        "REQ-52"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-place-the-focusguard-logo-in-the-top-left-corner-of-the-header-component-ensuring-it-is-prominently-displayed-and-properly-aligned-with-other-header-elements",
-      "featureTitle": "Place the FocusGuard logo in the top-left corner of the Header component, ensuring it is prominently displayed and properly aligned with other header elements.",
+      "featureId": "feature-revert-dashboard-component-styling-to-version-5-appearance-by-removing-the-enhanced-visual-depth-soft-shades-and-refined-card-shadows-that-were-added-in-version-6",
+      "featureTitle": "Revert Dashboard component styling to Version 5 appearance by removing the enhanced visual depth, soft shades, and refined card shadows that were added in Version 6",
       "files": [
-        "frontend/src/components/Header.tsx"
+        "frontend/src/components/Dashboard.tsx",
+        "frontend/src/pages/DashboardPage.tsx"
       ],
       "components": [
         "camera@1.0.0",
@@ -37,33 +38,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-47"
+        "REQ-53"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-improve-the-dashboard-component-appearance-by-adding-soft-shades-depth-and-enhanced-visual-hierarchy-use-subtle-background-contrasts-refined-card-based-sections-with-rounded-corners-and-light-shadows-to-make-the-dashboard-feel-modern-and-less-flat",
-      "featureTitle": "Improve the Dashboard component appearance by adding soft shades, depth, and enhanced visual hierarchy. Use subtle background contrasts, refined card-based sections with rounded corners, and light shadows to make the dashboard feel modern and less flat.",
-      "files": [
-        "frontend/src/components/Dashboard.tsx"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-48"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-refine-light-mode-theming-across-all-components-with-soft-gray-or-tinted-backgrounds-and-gentle-shadows-for-visual-separation-ensure-the-color-palette-reduces-eye-strain-and-maintains-readability",
-      "featureTitle": "Refine light mode theming across all components with soft gray or tinted backgrounds and gentle shadows for visual separation. Ensure the color palette reduces eye strain and maintains readability.",
+      "featureId": "feature-restore-light-mode-theming-to-version-5-color-palette-by-reverting-the-soft-gray-tinted-backgrounds-and-gentle-shadows-added-in-version-6",
+      "featureTitle": "Restore light mode theming to Version 5 color palette by reverting the soft gray/tinted backgrounds and gentle shadows added in Version 6",
       "files": [
         "frontend/src/index.css",
         "frontend/tailwind.config.js"
@@ -78,13 +59,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-49"
+        "REQ-54"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-refine-dark-mode-theming-across-all-components-with-deep-dark-backgrounds-and-slightly-lighter-cards-for-smooth-contrast-ensure-readability-is-maintained-and-eye-strain-is-reduced-in-dark-mode",
-      "featureTitle": "Refine dark mode theming across all components with deep dark backgrounds and slightly lighter cards for smooth contrast. Ensure readability is maintained and eye strain is reduced in dark mode.",
+      "featureId": "feature-restore-dark-mode-theming-to-version-5-appearance-by-reverting-the-deep-dark-backgrounds-and-refined-card-contrast-introduced-in-version-6",
+      "featureTitle": "Restore dark mode theming to Version 5 appearance by reverting the deep dark backgrounds and refined card contrast introduced in Version 6",
       "files": [
         "frontend/src/index.css",
         "frontend/tailwind.config.js"
@@ -99,33 +80,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-50"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-maintain-a-clean-distraction-free-layout-with-balanced-spacing-and-consistent-colors-across-both-light-and-dark-modes-the-final-design-should-feel-calm-premium-and-productivity-focused",
-      "featureTitle": "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both light and dark modes. The final design should feel calm, premium, and productivity-focused.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Footer.tsx",
-        "frontend/src/components/Header.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/DashboardPage.tsx",
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/src/pages/TimerPage.tsx"
-      ],
-      "components": [
-        "camera@1.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-51"
+        "REQ-55"
       ],
       "confidence": "high"
     }

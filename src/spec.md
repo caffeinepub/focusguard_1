@@ -1,13 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Enhance visual design and branding with a professional logo and refined UI theming for improved aesthetics and user experience.
+**Goal:** Revert the application's visual styling from Version 6 back to Version 5 appearance.
 
 **Planned changes:**
-- Add a clean, modern FocusGuard logo with shield/target/focus icon in the top-left corner of the Header
-- Improve Dashboard appearance with soft shadows, subtle background contrasts, and card-based sections with rounded corners
-- Refine light mode with soft gray/tinted backgrounds and gentle shadows for visual separation
-- Refine dark mode with deep dark backgrounds and slightly lighter cards for smooth contrast
-- Maintain clean, distraction-free layout with balanced spacing and consistent colors across both themes
+- Remove the FocusGuard logo from the Header component
+- Revert Dashboard component styling to simpler Version 5 layout without enhanced depth effects
+- Restore light mode theming to Version 5 color palette
+- Restore dark mode theming to Version 5 appearance
 
-**User-visible outcome:** Users will see a more polished, premium application with a professional logo and enhanced visual depth. The interface will feel modern and calming with improved visual hierarchy, better theme consistency, and reduced eye strain in both light and dark modes.
+**User-visible outcome:** The application displays with the simpler, cleaner visual styling from Version 5, with the logo removed from the header and all enhanced depth effects, refined shadows, and background treatments reverted to their previous state.

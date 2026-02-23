@@ -1,18 +1,18 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-22T18:38:05.321Z",
+  "generatedAt": "2026-02-22T18:57:34.824Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 6,
-    "implemented": 6,
+    "total": 4,
+    "implemented": 4,
     "items": [
       {
-        "id": "REQ-46",
-        "summary": "Create a clean, modern logo for FocusGuard that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable. Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol). The logo must work well in both light and dark modes.",
+        "id": "REQ-52",
+        "summary": "Remove the FocusGuard logo from the Header component that was added in Version 6",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/components/Header.tsx"
@@ -22,74 +22,42 @@
         ]
       },
       {
-        "id": "REQ-47",
-        "summary": "Place the FocusGuard logo in the top-left corner of the Header component, ensuring it is prominently displayed and properly aligned with other header elements.",
+        "id": "REQ-53",
+        "summary": "Revert Dashboard component styling to Version 5 appearance by removing the enhanced visual depth, soft shades, and refined card shadows that were added in Version 6",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/Header.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Header.tsx"
-        ]
-      },
-      {
-        "id": "REQ-48",
-        "summary": "Improve the Dashboard component appearance by adding soft shades, depth, and enhanced visual hierarchy. Use subtle background contrasts, refined card-based sections with rounded corners, and light shadows to make the dashboard feel modern and less flat.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/Dashboard.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/Dashboard.tsx"
-        ]
-      },
-      {
-        "id": "REQ-49",
-        "summary": "Refine light mode theming across all components with soft gray or tinted backgrounds and gentle shadows for visual separation. Ensure the color palette reduces eye strain and maintains readability.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ],
-        "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ]
-      },
-      {
-        "id": "REQ-50",
-        "summary": "Refine dark mode theming across all components with deep dark backgrounds and slightly lighter cards for smooth contrast. Ensure readability is maintained and eye strain is reduced in dark mode.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ],
-        "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ]
-      },
-      {
-        "id": "REQ-51",
-        "summary": "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both light and dark modes. The final design should feel calm, premium, and productivity-focused.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/src/App.tsx",
-          "frontend/src/components/Header.tsx",
-          "frontend/src/components/Footer.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/TimerPage.tsx",
+          "frontend/src/components/Dashboard.tsx",
           "frontend/src/pages/DashboardPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/src/App.tsx",
-          "frontend/src/components/Header.tsx",
-          "frontend/src/components/Footer.tsx",
-          "frontend/src/pages/HomePage.tsx",
-          "frontend/src/pages/TimerPage.tsx",
+          "frontend/src/components/Dashboard.tsx",
           "frontend/src/pages/DashboardPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-54",
+        "summary": "Restore light mode theming to Version 5 color palette by reverting the soft gray/tinted backgrounds and gentle shadows added in Version 6",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-55",
+        "summary": "Restore dark mode theming to Version 5 appearance by reverting the deep dark backgrounds and refined card contrast introduced in Version 6",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
         ]
       }
     ]
@@ -99,15 +67,10 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/focusguard-logo.dim_200x60.png",
-    "frontend/src/App.tsx",
     "frontend/src/components/Dashboard.tsx",
-    "frontend/src/components/Footer.tsx",
     "frontend/src/components/Header.tsx",
     "frontend/src/index.css",
     "frontend/src/pages/DashboardPage.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/TimerPage.tsx",
     "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",

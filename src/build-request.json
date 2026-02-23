@@ -1,149 +1,93 @@
 {
   "kind": "build_request",
-  "title": "Enhance visual design and branding with professional logo and refined UI theming",
+  "title": "Revert to Version 5",
   "projectName": "FocusGuard",
-  "priority": "normal",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-46",
-      "text": "Create a clean, modern logo for FocusGuard that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable. Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol). The logo must work well in both light and dark modes.",
+      "id": "REQ-52",
+      "text": "Remove the FocusGuard logo from the Header component that was added in Version 6",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-last"
         ],
         "quotes": [
-          "Add a clean and modern logo that represents focus, discipline, and productivity. The logo should be simple, minimal, and easily recognizable.",
-          "Use a professional font and an icon that matches the concept of protection and concentration (shield, target, or focus symbol)."
+          "get back to version 5"
         ]
       },
       "acceptanceCriteria": [
-        "Logo is visible in the top-left corner of the Header component",
-        "Logo design is simple, minimal, and professional",
-        "Logo includes an icon representing protection/focus (shield, target, or focus symbol)",
-        "Logo renders correctly in both light and dark theme modes",
-        "Logo uses a professional, readable font for the FocusGuard text"
+        "The logo image or logo component is removed from the Header component",
+        "The header displays only navigation buttons and theme toggle as in Version 5"
       ]
     },
     {
-      "id": "REQ-47",
-      "text": "Place the FocusGuard logo in the top-left corner of the Header component, ensuring it is prominently displayed and properly aligned with other header elements.",
+      "id": "REQ-53",
+      "text": "Revert Dashboard component styling to Version 5 appearance by removing the enhanced visual depth, soft shades, and refined card shadows that were added in Version 6",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-last"
         ],
         "quotes": [
-          "Place it in the top-left corner of the header and ensure it looks good in both light and dark modes."
+          "get back to version 5"
         ]
       },
       "acceptanceCriteria": [
-        "Logo appears in the top-left corner of the Header component",
-        "Logo is properly sized and does not overlap navigation elements",
-        "Logo alignment and spacing are consistent with the minimal design aesthetic"
+        "Dashboard uses the simpler card-based layout from Version 5 without the enhanced depth effects",
+        "Background contrasts and shadow refinements from Version 6 are removed",
+        "Visual hierarchy matches Version 5 implementation"
       ]
     },
     {
-      "id": "REQ-48",
-      "text": "Improve the Dashboard component appearance by adding soft shades, depth, and enhanced visual hierarchy. Use subtle background contrasts, refined card-based sections with rounded corners, and light shadows to make the dashboard feel modern and less flat.",
+      "id": "REQ-54",
+      "text": "Restore light mode theming to Version 5 color palette by reverting the soft gray/tinted backgrounds and gentle shadows added in Version 6",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-last"
         ],
         "quotes": [
-          "Improve the dashboard appearance by adding soft shades, depth, and visual hierarchy. Use subtle background contrasts, card-based sections, rounded corners, and light shadows to make the dashboard feel modern and less flat."
+          "get back to version 5"
         ]
       },
       "acceptanceCriteria": [
-        "Dashboard cards use soft shadows for depth perception",
-        "Card backgrounds have subtle contrast against the page background",
-        "Visual hierarchy clearly emphasizes key statistics and metrics",
-        "Dashboard feels modern and three-dimensional rather than flat",
-        "Design maintains the calm, productivity-focused aesthetic"
+        "Light mode uses the Version 5 color scheme",
+        "Soft gray backgrounds and refined shadows from Version 6 are removed",
+        "All components display with Version 5 light mode styling"
       ]
     },
     {
-      "id": "REQ-49",
-      "text": "Refine light mode theming across all components with soft gray or tinted backgrounds and gentle shadows for visual separation. Ensure the color palette reduces eye strain and maintains readability.",
+      "id": "REQ-55",
+      "text": "Restore dark mode theming to Version 5 appearance by reverting the deep dark backgrounds and refined card contrast introduced in Version 6",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-last"
         ],
         "quotes": [
-          "Light mode: soft gray or tinted backgrounds with gentle shadows for separation",
-          "Ensure readability and reduce eye strain"
+          "get back to version 5"
         ]
       },
       "acceptanceCriteria": [
-        "Light mode uses soft gray or subtly tinted backgrounds",
-        "Shadows in light mode are gentle and provide clear visual separation",
-        "Text contrast meets accessibility standards for readability",
-        "Color palette is designed to reduce eye strain during extended use",
-        "Background and foreground colors are balanced and comfortable to view"
-      ]
-    },
-    {
-      "id": "REQ-50",
-      "text": "Refine dark mode theming across all components with deep dark backgrounds and slightly lighter cards for smooth contrast. Ensure readability is maintained and eye strain is reduced in dark mode.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "Dark mode: deep dark backgrounds with slightly lighter cards and smooth contrast",
-          "Ensure readability and reduce eye strain"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Dark mode uses deep dark backgrounds (not pure black)",
-        "Card elements are slightly lighter than the background for smooth contrast",
-        "Text contrast is sufficient for comfortable reading in dark mode",
-        "Shadows and depth cues work effectively in dark mode",
-        "Dark mode color palette reduces eye strain during nighttime use"
-      ]
-    },
-    {
-      "id": "REQ-51",
-      "text": "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both light and dark modes. The final design should feel calm, premium, and productivity-focused.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-6"
-        ],
-        "quotes": [
-          "Maintain a clean, distraction-free layout with balanced spacing and consistent colors across both modes.",
-          "The final design should feel calm, premium, and productivity-focused."
-        ]
-      },
-      "acceptanceCriteria": [
-        "Spacing between components is balanced and consistent",
-        "Color scheme is consistent across both light and dark modes",
-        "Layout remains clean and uncluttered",
-        "Overall aesthetic feels premium and productivity-focused",
-        "Design maintains a calm atmosphere suitable for focused study work"
+        "Dark mode uses the Version 5 color scheme",
+        "Enhanced background depth and card contrast from Version 6 are removed",
+        "All components display with Version 5 dark mode styling"
       ]
     }
   ],
   "constraints": [
-    "Do not modify the immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
-    "Maintain the existing React + Tailwind + Shadcn stack",
-    "Preserve all existing functionality while enhancing visual design",
-    "Ensure logo works properly in both light and dark themes without requiring separate logo files"
+    "Maintain all existing functionality while reverting only visual styling changes",
+    "Do not modify backend main.mo or migration.mo files",
+    "Preserve immutable frontend paths: useInternetIdentity.ts, useInternetIdentity.tsx, useActor.ts, main.tsx, components/ui"
   ],
   "nonGoals": [
-    "Changing the application functionality or features",
-    "Modifying backend code or data structures",
-    "Adding new pages or navigation structure",
-    "Implementing animations beyond what already exists",
-    "Creating a full rebrand beyond the logo and visual refinements"
+    "Removing features added before Version 6",
+    "Modifying timer, camera monitoring, or music player functionality",
+    "Changing backend data structures or session tracking logic"
   ],
   "imageRequirements": {
-    "required": [
-      "Professional FocusGuard logo with shield/target/focus icon symbol and clean typography, suitable for both light and dark backgrounds (focusguard-logo.dim_200x60.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }
